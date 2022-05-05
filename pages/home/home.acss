@@ -1,0 +1,83 @@
+@import '../../components/grid/grid.acss';
+@import '../../components/recommendlist/recommendlist.acss';
+.page-bar{
+  height: 40px;
+  background-color: #1f94ea;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.page-bar-input{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 200px;
+}
+
+.page-bar-input-button{
+  background-color: #1f94ea;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 200px;
+}
+.page-bar-messageBox image{
+  width: 25px;
+  height: 30px;
+}
+.page-swiper{
+  text-align: center;
+}
+.page-scroll-view_H{
+  white-space: nowrap;
+  display:flex;
+}
+.page-scroll-view-item_H{
+  flex-shrink:0;
+  flex-grow:0;
+  width: 500px;
+  height: 130px;
+}
+.page-section {
+  background: #fff;
+  margin-bottom: 32rpx;
+}
+.page-classification{
+  margin-top: 30rpx;
+}
+.page-new-old{
+  display: flex;
+  justify-content: space-evenly;
+}
+.page-new ,.page-old{
+  background-color: #1f94ea;
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-old-pics, .page-new-pics{
+  display: flex;
+  justify-content: space-evenly;
+  width: inherit;
+}
+.page-old-pics image,.page-new-pics image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.page-list-button{
+  display: flex;
+  justify-content: space-evenly;
+}
+.page-list-button-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-list-button-detail-label-active{
+  color: blue;
+}

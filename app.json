@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/classification/classification",
+    "pages/cart/cart",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "defaultTitle": "耗材管理系统"
+  },
+  "tabBar": {
+    "textColor": "#dddddd",
+    "selectedColor": "#49a9ee",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/home/home",
+        "icon":"image/home.svg",
+        "activeIcon": "image/home_active.svg",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "icon":"image/classification.svg",
+        "activeIcon": "image/classification_active.svg",
+        "name": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "icon":"image/cart.svg",
+        "activeIcon": "image/cart_active.svg",
+        "name": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "icon":"image/mine.svg",
+        "activeIcon": "image/mine_active.svg",
+        "name": "我的"
+      }
+    ]
+  }
+}
