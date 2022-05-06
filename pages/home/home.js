@@ -54,59 +54,6 @@ Page({
       ],
       columnNum: 6
     },
-    recommendlist: {
-      list: [
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "1"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "2"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "3"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "4"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "5"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "6"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "7"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "8"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "9"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "10"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "11"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "12"
-        }
-      ],
-      columnNum: 2
-    },
     listbutton: [
       {
         "label1": "这是button",
@@ -130,61 +77,9 @@ Page({
       }
     ],
     lastindex: 0,
-    gridlistconsumables: {
-      list: [
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "title": "这是标题",
-          "description": "这是描述",
-          "num": "这是剩余数量"
-        },
-      ]
-    }
-
   },
   handleItemTap(e) {
+
     dd.showToast({
       content: `第${e.currentTarget.dataset.index}个Item`,
       success: (res) => {
@@ -193,6 +88,7 @@ Page({
     });
   },
   handlelistbuttontap(e) {
+    console.log("home的button")
     let index = e.currentTarget.dataset.index
     let changeclass = 'listbutton[' + index + '].class'
     let clearlastclass = 'listbutton[' + this.data.lastindex + '].class'

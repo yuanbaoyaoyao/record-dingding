@@ -1,3 +1,24 @@
-<view>
-  这是分类
+<view class="container">
+  <appbar/>
+  <view class="classification">
+    <view class="classification-nav">
+      <block a:for="{{navlist}}">
+        <view class="classification-nav-item" onTap="handlenavtap" data-index={{index}}>
+          <view class="{{item.class}}">
+            {{item.text}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="classification-content">
+      <view class="classification-content-header" id="classification-content-header">
+        这是右侧头部
+      </view>
+      <!-- 占位 -->
+      <view style="height:{{contentHeaderHeight}}px" />
+      <view class="classification-content-detail">
+        这是右侧具体目录
+      </view>
+    </view>
+  </view>
 </view>

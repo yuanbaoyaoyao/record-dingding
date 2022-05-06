@@ -1,0 +1,31 @@
+.appbar{
+  position: fixed;
+  z-index: 999999 !important;
+  height: 40px;
+  background-color: #1f94ea;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.appbar-input{
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 200px;
+}
+
+.appbar-input-button{
+  background-color: #1f94ea;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 200px;
+}
+.appbar-messageBox image{
+  width: 25px;
+  height: 30px;
+}

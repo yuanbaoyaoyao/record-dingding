@@ -1,0 +1,30 @@
+.classification{
+  display: flex;
+}
+.classification-nav{
+  font-size: small;
+  width: 180rpx;
+  text-align: center;
+  height: 100vh;
+    /* background-color: cornflowerblue; */
+
+}
+.classification-nav-item{
+  background-color: cornflowerblue;
+  padding-top: 35rpx;
+}
+.classification-nav-item-detail{
+    width: 100%;
+  height: 100%;
+  border-left:5rpx solid black;
+
+}
+.classification-nav-item-detail-active{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.classification-content-header{
+  position: fixed;
+}
