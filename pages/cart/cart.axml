@@ -1,3 +1,34 @@
-<view>
-  这是购物车
+<view class="cart">
+  <!-- 添加一个header，加上编辑按钮 -->
+  <scroll-view scroll-y={{true}}>
+    <!-- 直接修改recommendlist -->
+    <block a:for="{{contentlist}}">
+      <view class="cart-content-detail">
+        <image mode="scaleToFill" src="{{item.checkedpic}}" style="width:40rpx;height:40rpx" />
+        <image mode="scaleToFill" src="{{item.pic}}" style="width:200rpx;height:200rpx" />
+        <view class="cart-content-detail-info">
+          <text>这是标题</text>
+          <text>这是描述</text>
+          <view class="cart-content-detail-info-bottom">
+            <text>这是剩余数量</text>
+            <view class="cart-content-detail-info-bottom-button">
+              <image class="cart-content-detail-info-bottom-button-minus" mode="scaleToFill" src="/image/cartminusbutton.svg" 
+                style="width:40rpx;height:40rpx" />
+              <view>
+                {{item.num}}
+              </view>
+              <image class="cart-content-detail-info-bottom-button-add" mode="scaleToFill" src="/image/cartaddbutton.svg" 
+                style="width:40rpx;height:40rpx" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="recommendlist-title">
+    <image mode="scaleToFill" src="/image/musiclogo.svg" style="width:40rpx;height:40rpx" />
+    <text>为你推荐</text>
+    <image mode="scaleToFill" src="/image/musiclogo.svg" style="width:40rpx;height:40rpx" />
+  </view>
+  <recommendlist/>
 </view>
