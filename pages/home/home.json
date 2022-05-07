@@ -2,5 +2,8 @@
   "usingComponents": {
     "recommendlist":"../../components/recommendlist/recommendlist",
     "appbar":"../../components/appbar/appbar"
+  },
+  "window":{
+    "navigationStyle":"custom"
   }
 }

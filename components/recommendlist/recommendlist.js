@@ -73,9 +73,6 @@ Component({
      * @method busAnimation
      */
     getCartPos: function () {
-
-
-
       var that = this;
       console.log("yes")
       my.getSystemInfo({

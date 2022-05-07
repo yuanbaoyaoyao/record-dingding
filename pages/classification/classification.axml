@@ -1,24 +1,51 @@
 <view class="container">
   <appbar/>
   <view class="classification">
-    <view class="classification-nav">
+    <scroll-view class="classification-nav" scroll-y={{true}}>
       <block a:for="{{navlist}}">
         <view class="classification-nav-item" onTap="handlenavtap" data-index={{index}}>
           <view class="{{item.class}}">
-            {{item.text}}
+            <label>{{item.text}}</label>
           </view>
         </view>
       </block>
-    </view>
+    </scroll-view>
+    
     <view class="classification-content">
       <view class="classification-content-header" id="classification-content-header">
-        这是右侧头部
+        <block a:for="{{headerlist}}">
+          <view class="{{item.class}}" onTap="handleheaderbuttontap" data-index={{index}}>
+            <label>{{item.text}}</label>
+            <view class="test">
+              <image a:if="{{item.image1}}" mode="scaleToFill" src="{{item.image1}}" />
+              <image a:if="{{item.image2}}" mode="scaleToFill" src="{{item.image2}}" />
+            </view>
+          </view>
+        </block>
       </view>
       <!-- 占位 -->
       <view style="height:{{contentHeaderHeight}}px" />
-      <view class="classification-content-detail">
-        这是右侧具体目录
-      </view>
+      
+      <scroll-view scroll-y={{true}} style="height: {{contentHeightvh}}vh">
+        <!-- 直接修改recommendlist -->
+        <block a:for="{{contentlist}}">
+          <view class="classification-content-detail">
+            <image mode="scaleToFill" src="{{item.pic}}" />
+            <view class="classification-content-detail-info">
+              <text>这是标题</text>
+              <text>这是描述</text>
+              <view class="classification-content-detail-info-bottom">
+                <text>这是剩余数量</text>
+                <view onTap="touchOnGoods">
+                  <image mode="scaleToFill" src="/image/add.svg" />
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="good_box" hidden="{{hide_good_box}}" style="left: {{bus_x}}px; top: {{bus_y}}px;">
     </view>
   </view>
 </view>

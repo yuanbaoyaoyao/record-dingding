@@ -79,7 +79,6 @@ Page({
     lastindex: 0,
   },
   handleItemTap(e) {
-
     dd.showToast({
       content: `第${e.currentTarget.dataset.index}个Item`,
       success: (res) => {
@@ -92,10 +91,12 @@ Page({
     let index = e.currentTarget.dataset.index
     let changeclass = 'listbutton[' + index + '].class'
     let clearlastclass = 'listbutton[' + this.data.lastindex + '].class'
-    this.setData({
-      [changeclass]: 'page-list-button-detail-label-active',
-      [clearlastclass]: '',
-    })
+    if(changeclass!=clearlastclass){
+      this.setData({
+        [changeclass]: 'page-list-button-detail-label-active',
+        [clearlastclass]: '',
+      })
+    }
     this.data.lastindex = index
   },
   onLoad() { },
