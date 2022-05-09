@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "recommendlist": "../../components/recommendlist/recommendlist"
-  }
+  },
+  "defaultTitle": "购物车"
 }

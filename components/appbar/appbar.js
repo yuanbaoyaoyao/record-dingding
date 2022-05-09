@@ -14,5 +14,18 @@ Component({
   },
   didUpdate() { },
   didUnmount() { },
-  methods: {},
+  methods: {
+    handletosearch(){
+      console.log("yes2222")
+      dd.navigateTo({
+        url:'/pages/search/search'
+      })
+    },
+    handletomessage(){
+      dd.navigateTo({
+        url:'/pages/message/message'
+      })
+    },
+
+  },
 });

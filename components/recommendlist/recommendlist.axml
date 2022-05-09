@@ -2,16 +2,18 @@
 <view class="recommendlist">
   <block a:for="{{recommendlist.list}}">
     <!-- 贝塞尔曲线 -->
-    <view style="width:{{100/(columnNum||2)}}%;padding-top:40%;" class="recommendlist-item" onTap="handleItemTap" data-index={{index}}>
+    <view style="width:{{100/(columnNum||2)}}%;padding-top:40%;" class="recommendlist-item"  data-index={{index}}>
       <view class="recommendlist-item-wrapper">
-        <image id="cart-icon" mode="aspectFit" src="{{item.pic}}" class="recommendlist-pic" />
+        <view onTap="handleItemTap" >
+          <image id="cart-icon" mode="aspectFit" src="{{item.pic}}"  style="width:160rpx;height:160rpx"/>
+        </view>
         <text class="recommendlist-text">这是标题</text>
         <text class="recommendlist-text">这是描述</text>
         <view class="recommendlist-item-addinfo">
           <text>这是剩余数量</text>
-          <button onTap="touchOnGoods" size="mini" type="goust">
+          <view onTap="touchOnAdd">
             <image class="recommendlist-item-addicon" mode="scaleToFill" src="../../image/add.svg" />
-          </button>
+          </view>
         </view>
       </view>
       <!-- 购物车 -->

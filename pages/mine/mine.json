@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "recommendlist": "../../components/recommendlist/recommendlist"
+  },
+  "defaultTitle": "我的"
 }

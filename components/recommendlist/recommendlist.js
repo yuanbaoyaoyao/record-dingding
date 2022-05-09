@@ -68,6 +68,11 @@ Component({
   didUnmount() { },
 
   methods: {
+    handleItemTap() {
+      dd.navigateTo({
+        url: '/pages/consumables_detail/consumables_detail'
+      })
+    },
     /**
      * 设置动画开始及结束维护 needAni 参数
      * @method busAnimation
@@ -116,10 +121,10 @@ Component({
 
     /**
      * 物品的点击事件
-     * @method touchOnGoods
+     * @method touchOnAdd
      * @param {object} e 事件
      */
-    touchOnGoods: function (e) {
+    touchOnAdd: function (e) {
       console.log(e)
       // 如果good_box正在运动，则不处理
       if (!this.data.hide_good_box) return;

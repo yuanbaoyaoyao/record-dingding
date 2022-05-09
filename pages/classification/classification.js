@@ -125,19 +125,19 @@ Page({
   },
   onLoad() {
     this.getCartPos(),
-    dd.createSelectorQuery().select('#classification-content-header').boundingClientRect().exec((ret) => {
-      dd.getSystemInfo({
-        success: (res) => {
-          this.setData({
-            contentHeaderHeightvh: ret[0].height * 100 / res.windowHeight,
-            contentHeightvh: 100 - ret[0].height * 100 / res.windowHeight
-          })
-        }
+      dd.createSelectorQuery().select('#classification-content-header').boundingClientRect().exec((ret) => {
+        dd.getSystemInfo({
+          success: (res) => {
+            this.setData({
+              contentHeaderHeightvh: ret[0].height * 100 / res.windowHeight,
+              contentHeightvh: 100 - ret[0].height * 100 / res.windowHeight
+            })
+          }
+        })
+        this.setData({
+          contentHeaderHeight: ret[0].height
+        })
       })
-      this.setData({
-        contentHeaderHeight: ret[0].height
-      })
-    })
   },
   handlenavtap(e) {
     let index = e.currentTarget.dataset.index
@@ -162,6 +162,11 @@ Page({
       })
     }
     this.data.lastheaderbuttonindex = index
+  },
+  handletodetail() {
+    dd.navigateTo({
+      url:'/pages/consumables_detail/consumables_detail'
+    })
   },
 
   /**

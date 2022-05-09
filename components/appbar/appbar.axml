@@ -1,13 +1,13 @@
 <view class="appbar" id="appbar">
   <block>
-    <view class="appbar-input">
+    <view class="appbar-input" onTap="handletosearch">
       <input placeholder="请输入搜索内容"></input>
       <view class="appbar-input-button">
         <icon type="search" size="15"></icon>
         <button size="mini" type="primary">搜索{{appbarHeight}}</button>
       </view>
     </view>
-    <view class="appbar-messageBox">
+    <view class="appbar-messageBox" onTap="handletomessage">
       <button size="mini" type="primary">
         <image mode="scaleToFill" src="/image/message_box.svg"></image>
       </button>

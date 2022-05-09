@@ -61,10 +61,7 @@
   grid-template-columns: 35% auto;
   border-bottom:5rpx solid black;
 }
-.classification-content-detail>image{
-  width: 200rpx;
-  height: 200rpx;
-} 
+
 .classification-content-detail-info{
   width: 100%;
   display: flex;

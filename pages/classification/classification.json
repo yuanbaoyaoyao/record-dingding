@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "appbar":"../../components/appbar/appbar"
-  }
+  },
+    "defaultTitle": "分类"
 }

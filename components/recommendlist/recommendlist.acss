@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 20rpx;
 }
 
 .recommendlist-item {
@@ -37,9 +38,10 @@
 }
 .recommendlist-item-addinfo{
     margin-top: 8rpx;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 80% auto;
+    justify-items:start;
+    width: 100%;
 }
 .recommendlist-item-addicon{
     width: 30rpx;

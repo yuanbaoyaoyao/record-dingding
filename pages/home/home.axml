@@ -5,7 +5,9 @@
   <view class="page-swiper">
     <swiper indicator-dots="{{true}}" autoplay="{{true}}">
       <swiper-item a:for="{{background}}">
-        <image mode="scaleToFill" src="{{item}}" lazy-load="{{true}}"></image>
+        <view onTap="handletodetail">
+          <image mode="scaleToFill" src="{{item}}" lazy-load="{{true}}"></image>
+        </view>
       </swiper-item>
     </swiper>
   </view>
@@ -23,7 +25,7 @@
     </swiper>
   </view>
   <view class="page-new-old page-section">
-    <view class="page-old">
+    <view class="page-old" onTap="handletoold">
       这是旧耗材
       <view class="page-old-description">
         这是描述
@@ -33,7 +35,7 @@
         <image mode="scaleToFill" src="/image/mock/88a1.png" lazy-load="{{true}}"></image>
       </view>
     </view>
-    <view class="page-new">
+    <view class="page-new" onTap="handletonew">
       这是新耗材
       <view class="page-new-description">
         这是描述

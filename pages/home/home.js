@@ -78,26 +78,45 @@ Page({
     ],
     lastindex: 0,
   },
-  handleItemTap(e) {
-    dd.showToast({
-      content: `第${e.currentTarget.dataset.index}个Item`,
-      success: (res) => {
-
-      },
-    });
-  },
+  // handleItemTap(e) {
+  //   dd.showToast({
+  //     content: `第${e.currentTarget.dataset.index}个Item`,
+  //     success: (res) => {
+  //     },
+  //   });
+  // },
   handlelistbuttontap(e) {
     console.log("home的button")
     let index = e.currentTarget.dataset.index
     let changeclass = 'listbutton[' + index + '].class'
     let clearlastclass = 'listbutton[' + this.data.lastindex + '].class'
-    if(changeclass!=clearlastclass){
+    if (changeclass != clearlastclass) {
       this.setData({
         [changeclass]: 'page-list-button-detail-label-active',
         [clearlastclass]: '',
       })
     }
     this.data.lastindex = index
+  },
+  handletodetail() {
+    dd.navigateTo({
+      url: '/pages/consumables_detail/consumables_detail'
+    })
+  },
+  handletoold(){
+    dd.navigateTo({
+      url:'/pages/old_consumables/old_consumables'
+    })
+  },
+  handletonew(){
+    dd.navigateTo({
+      url:'/pages/new_consumables/new_consumables'
+    })
+  },
+  handletoclassification(){
+    dd.switchTab({
+      url:'/pages/classification/classification'
+    })
   },
   onLoad() { },
 });
