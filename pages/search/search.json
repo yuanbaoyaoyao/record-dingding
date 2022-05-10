@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "recommendlist_one":"../../components/recommendlist_one/recommendlist_one"
+  },
   "defaultTitle": "搜索"
 }

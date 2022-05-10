@@ -73,7 +73,6 @@ Page({
   },
   handlesearch(e) {
     let searchItem = e.detail.value.searchInput
-    console.log("searchItem", searchItem)
     this.handletosearchdetails(searchItem)
   },
   handletosearchdetails(searchItem) {
@@ -118,6 +117,10 @@ Page({
         }
       },
     })
-
+  },
+  handletocart(){
+    dd.switchTab({
+      url:'/pages/cart/cart'
+    })
   }
 });

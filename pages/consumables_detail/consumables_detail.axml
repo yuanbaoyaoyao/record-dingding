@@ -1,3 +1,70 @@
-<view>
-  这是耗材详情页
+<view class="detail">
+  <view id="detail-header" class="detail-header">
+    <view class="detail-header-button">
+      耗材
+    </view>
+    <view class="detail-header-button">
+      评价
+    </view>
+    <view class="detail-header-button">
+      详情
+    </view>
+  </view>
+  <!-- 占位使用 -->
+  <view>
+  </view>
+  <scroll-view>
+    <view class="detail-image">
+      <image mode="scaleToFill" src="../../image/mock/88a1.png" />
+    </view>
+    <view class="detail-content">
+      <text class="detail-content-header">这是标题</text>
+      <text class="detail-content-description">这是描述</text>
+      <text class="detail-content-info">这是剩余数量</text>
+    </view>
+    <view class="detail-handle">
+      <view class="detail-handle-num">
+        <text>数量</text>
+        <view class="detail-handle-num-button">
+          <view class="detail-handle-num-button-minus" onTap="handleMinusItem">
+            <image mode="scaleToFill" src="../../image/cartminusbutton.svg" style="width:40rpx;height:40rpx" />
+          </view>
+          <text>5件</text>
+          <view class="detail-handle-num-button-add" onTap="handleAddItem">
+            <image mode="scaleToFill" src="../../image/cartaddbutton.svg" style="width:40rpx;height:40rpx" />
+          </view>
+        </view>
+      </view>
+      <view class="detail-handle-address">
+        <text>地址</text>
+        <view onTap="handleSelectAddress">
+          <text>选择地址</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view>
+    <view class="detail-recommend">
+      <text>为你推荐</text>
+      <scroll-view scroll-x={{true}}>图片</scroll-view>
+    </view>
+    <view class="detail-evaluate">
+      <view class="detail-evaluate-header">
+        <text>评价</text>
+        <view onTap="handleGetEvaluationDetail">
+          评价详情
+        </view>
+      </view>
+      <view class="detail-evaluate-content">
+        这是评价
+      </view>
+    </view>
+  </scroll-view>
+  <scroll-view>
+    
+    <view class="detail-info">
+      这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息 这是耗材信息
+    </view>
+  </scroll-view>
+  
 </view>

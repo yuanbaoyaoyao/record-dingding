@@ -10,7 +10,6 @@
   border-radius: 30rpx;
   height: 60rpx;
 }
-
 .search-input-content{
   display: flex;
   border-radius: 30rpx;
@@ -67,7 +66,16 @@
 .float-cart{
   position: fixed;
   z-index: 999999 !important;
-  color: black;
-  /* background-color: black; */
-  /* right: 60rpx; */
+  top: 900rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  left: 630rpx;
+  background-color: black;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.float-cart image{
+  margin-left: 10rpx;
+  margin-top: 10rpx;
 }

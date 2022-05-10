@@ -1,0 +1,17 @@
+/* .float-cart{
+  position: fixed;
+  z-index: 999999 !important;
+  top: 900rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  left: 630rpx;
+  background-color: black;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+.float-cart image{
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  background-color: bl;
+} */

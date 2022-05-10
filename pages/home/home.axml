@@ -63,6 +63,6 @@
     <!--</block> -->
     <!-- 父传子或者子直接获取 -->
     <!--<recommendlist recommendlist="{{...recommendlist}}"></recommendlist> -->
-    <recommendlist/>
+    <recommendlist columnValue=1 />
   </view>
 </view>

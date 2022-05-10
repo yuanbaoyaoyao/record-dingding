@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/search/search",
-    "pages/cart/cart", 
-    "pages/home/home",
-    "pages/mine/mine",
-    "pages/classification/classification",
     "pages/consumables_detail/consumables_detail",
+    "pages/search/search",
+    "pages/home/home",
+    "pages/classification/classification",
+    "pages/cart/cart",
+    "pages/mine/mine",
     "pages/old_consumables/old_consumables",
     "pages/new_consumables/new_consumables",
     "pages/message/message",

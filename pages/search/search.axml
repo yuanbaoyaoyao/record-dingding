@@ -62,7 +62,7 @@
       </block>
     </scroll-view>
   </view>
-  <view class="float-cart">
+  <view class="float-cart" onTap="handletocart">
     <image mode="scaleToFill" src="/image/cart.svg" style="width:80rpx;height:80rpx" />
   </view>
 </view>

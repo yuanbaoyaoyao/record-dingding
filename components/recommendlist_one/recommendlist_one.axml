@@ -1,0 +1,21 @@
+  <scroll-view scroll-y={{true}} style="height: {{heightValue}}vh">
+    <!-- 直接修改recommendlist -->
+    <block a:for="{{datalist}}">
+      <view class="classification-content-detail">
+        <view onTap="handleItemTap">
+          <image mode="scaleToFill" src="{{item.pic}}" style="width:200rpx;height:200rpx" />
+        </view>
+        <view class="classification-content-detail-info">
+          <text>这是标题</text>
+          <text>这是描述</text>
+          <view class="classification-content-detail-info-bottom">
+            <text>这是剩余数量</text>
+            <view onTap="touchOnGoods">
+              <image mode="scaleToFill" src="/image/add.svg" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  

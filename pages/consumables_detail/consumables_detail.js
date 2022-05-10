@@ -1,4 +1,8 @@
 Page({
-  data: {},
-  onLoad() {},
+  data: {
+    detailHeaderHeight: 0
+  },
+  onLoad() {
+
+  },
 });
