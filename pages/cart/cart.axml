@@ -1,4 +1,13 @@
 <view class="cart">
+  <!-- 占位 -->
+  <view style="height:10rpx">
+    
+  </view>
+  <view class="cart-header">
+    <view class="cart-header-button" onTap="handleCartEdit">
+      编辑
+    </view>
+  </view>
   <!-- 添加一个header，加上编辑按钮 -->
   <scroll-view scroll-y={{true}}>
     <!-- 直接修改recommendlist -->
@@ -31,4 +40,22 @@
     <image mode="scaleToFill" src="/image/musiclogo.svg" style="width:40rpx;height:40rpx" />
   </view>
   <recommendlist/>
+  <!-- bottom占位 -->
+  <view style="height:{{cartBottomHeight}}px">
+    
+  </view>
+  <view id="cart-bottom" class="cart-bottom">
+    <view class="cart-bottom-left">
+      <image mode="scaleToFill" src="../../image/checked.svg" style="height:40rpx;width:40rpx" />
+      <text>全选</text>
+    </view>
+    <view class="cart-bottom-right">
+      <view class="cart-count-info">
+        <text>合计：{{6}}件</text>
+      </view>
+      <view class="cart-confirm-button" onTap="handleCartConfirm">
+        <text>去结算</text>
+      </view>
+    </view>
+  </view>
 </view>

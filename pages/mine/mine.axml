@@ -1,6 +1,17 @@
 <view class="mine">
-  <view class="mine-info">
-    这是个人简介
+  <!-- 占位 -->
+  <view style="height:10rpx">
+    
+  </view>
+  <view class="mine-info" onTap="handleEditSetting">
+    <image mode="scaleToFill" src="../../image/musiclogo.svg" style="height:120rpx;width:120rpx" />
+    <view class="mine-info-name">
+      这是名称
+    </view>
+    <view class="mine-setting">
+      <text>设置</text>
+      <image mode="scaleToFill" src="../../image/next.svg"  style="height:40rpx;width:40rpx"/>
+    </view>
   </view>
   <view class="mine-function">
     <view class="mine-function-header">
@@ -34,7 +45,7 @@
       <text>图标四</text>
     </view>
   </view>
-    <view class="recommendlist-title">
+  <view class="recommendlist-title">
     <image mode="scaleToFill" src="/image/musiclogo.svg" style="width:40rpx;height:40rpx" />
     <text>为你推荐</text>
     <image mode="scaleToFill" src="/image/musiclogo.svg" style="width:40rpx;height:40rpx" />

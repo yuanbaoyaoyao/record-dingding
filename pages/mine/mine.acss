@@ -2,7 +2,15 @@
   margin: 5rpx;
 }
 .mine-info{
-  margin: 10rpx;
+  margin: 20rpx;
+  display: grid;
+  grid-template-columns: 20% 50% auto;
+}
+.mine-setting{
+  display: flex;
+}
+.mine-info-name,.mine-setting{
+  padding: 30rpx;
 }
 .mine-function{
   background-color: white;

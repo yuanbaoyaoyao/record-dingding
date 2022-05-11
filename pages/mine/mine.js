@@ -1,4 +1,11 @@
 Page({
   data: {},
-  onLoad() {},
+  onLoad() {
+
+  },
+  handleEditSetting() {
+    dd.navigateTo({
+      url: '/pages/setting/setting'
+    })
+  }
 });

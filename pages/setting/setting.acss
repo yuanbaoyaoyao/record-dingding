@@ -1,0 +1,7 @@
+.setting-button{
+  background-color: white;
+  padding:10rpx;
+  display: grid;
+  grid-template-columns: 7% auto 5%;
+  margin-bottom: 3rpx;
+}
