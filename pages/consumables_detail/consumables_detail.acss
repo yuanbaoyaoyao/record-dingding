@@ -58,8 +58,13 @@
   margin:5rpx;
   background-color: cyan;
   padding: 10rpx;
+  height: 800rpx;
 }
 .detail-evaluate-header{
   display: grid;
   grid-template-columns: 70% auto;
+}
+.detail-header-button-active{
+  font-weight: 800;
+  color: yellowgreen;
 }
