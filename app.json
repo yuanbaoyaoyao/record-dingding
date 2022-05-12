@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/consumables_detail/consumables_detail",
+    "pages/setting/setting_details/address_management/address_management",
+    "pages/setting/setting_details/user_info/user_info",
     "pages/setting/setting",
     "pages/mine/mine",
     "pages/cart/cart",
-    "pages/home/home",
-    "pages/consumables_detail/consumables_detail",
     "pages/search/search",
     "pages/classification/classification",
     "pages/old_consumables/old_consumables",
@@ -12,9 +14,7 @@
     "pages/message/message",
     "pages/search/search_details/search_details",
     "pages/setting/setting_details/about_me/about_me",
-    "pages/setting/setting_details/address_management/address_management",
-    "pages/setting/setting_details/password_management/password_management",
-    "pages/setting/setting_details/user_info/user_info"
+    "pages/setting/setting_details/password_management/password_management"
   ],
   "window": {
     "defaultTitle": "耗材管理系统"

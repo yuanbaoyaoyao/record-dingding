@@ -1,3 +1,24 @@
-<view>
-  New Page
+<view class="about-me">
+  <view class="about-me-button">
+    <text>头像</text>
+    <view class="about-me-button-right">
+      <view >
+        <view class="about-me-button-avatar">
+          <image mode="scaleToFill" src="/image/musiclogo.svg" style="height:80rpx;width:80rpx" />
+        </view>
+      </view>
+      <view class="about-me-button-next">
+        <image class="about-me-button-next" mode="scaleToFill" src="/image/next.svg" style="height:40rpx;width:40rpx" />
+      </view>
+    </view>
+  </view>
+  <view class="about-me-button">
+    <text>用户名</text>
+    <view class="about-me-button-right">
+      <text>元宝尧尧</text>
+      <view class="about-me-button-next">
+        <image class="about-me-button-next" mode="scaleToFill" src="/image/next.svg" style="height:40rpx;width:40rpx" />
+      </view>
+    </view>
+  </view>
 </view>

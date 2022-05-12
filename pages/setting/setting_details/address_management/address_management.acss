@@ -1,0 +1,32 @@
+.address-management-item{
+  display: grid;
+  grid-template-columns: 80% auto;
+  background-color: white;
+  padding:10rpx;
+  margin-bottom: 3rpx;
+}
+.address-management-item-info-header{
+  margin-bottom: 5rpx;
+}
+.address-management-item-info-header>text{
+  margin-right: 20rpx;
+}
+.address-management-item-info-detail{
+  font-size: 25rpx;
+}
+.address-management-item-right{
+  padding: 40rpx;
+  padding-left: 60rpx;
+  padding-bottom: 0;
+}
+.address-management-add-button{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background-color: blueviolet;
+  width: 95%;
+  margin-bottom: 10rpx;
+  padding:20rpx;
+  border-radius: 30rpx;
+}

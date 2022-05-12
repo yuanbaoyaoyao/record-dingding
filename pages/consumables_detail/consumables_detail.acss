@@ -68,3 +68,24 @@
   font-weight: 800;
   color: yellowgreen;
 }
+.detail-bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% auto ;
+  padding: 25rpx 20rpx 25rpx 20rpx;
+}
+.detail-bottom-left image{
+  margin-right: 30rpx;
+}
+.detail-bottom-right{
+  display: flex;
+  justify-content: space-around;
+}
+.detail-bottom-right-button{
+  padding: 10rpx;
+  background-color: burlywood;
+  border-radius: 30rpx;
+}

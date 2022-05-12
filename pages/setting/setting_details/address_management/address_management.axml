@@ -1,3 +1,25 @@
-<view>
-  New Page
+<view class="address-management">
+  <block a:for="{{addressInfo}}">
+    <view class="address-management-item">
+      <view class="address-management-item-left">
+        <view class="address-management-item-info-header">
+          <text>{{item.name}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+        <view class="address-management-item-info-detail">
+          {{item.region}}
+        </view>
+        <view class="address-management-item-info-detail">
+          {{item.detailAddress}}
+        </view>
+      </view>
+      <view class="address-management-item-right">
+        <image mode="scaleToFill" src="/image/next.svg" style="height:40rpx;width:40rpx" />
+      </view>
+    </view>
+  </block>
+  <view class="address-management-add-button">
+    <image mode="scaleToFill" src="/image/add.svg" style="height:40rpx;width:40rpx" />
+    <text>新建收货地址</text>
+  </view>
 </view>

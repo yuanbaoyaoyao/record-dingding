@@ -1,0 +1,23 @@
+.about-me-button{
+  background-color: white;
+  display: grid;
+  grid-template-columns: 65% auto;
+  margin-bottom: 2rpx;
+}
+.about-me-button-right{
+  display: grid;
+  grid-template-columns: 70% auto;
+  justify-items: center;
+}
+.about-me-button-avatar{
+  background-color: gray;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.about-me-button>text,.about-me-button-right>text{
+  margin: 15rpx;
+}
+.about-me-button-next{
+  margin: 10rpx;
+}
