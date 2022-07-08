@@ -1,81 +1,35 @@
-//区分左右边要变化公式
+
+
 Component({
-
-
-  mixins: [{ didMount() { } }],
+  mixins: [],
   data: {
-    recommendlist: {
-      list: [
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "1"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "2"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "3"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "4"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "5"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "6"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "7"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "8"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "9"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "10"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "11"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "12"
-        }
-      ],
-      columnNum: 2
-    },
-    //
+    heightValue: 90,
+    datalist: [],
+    busPos: 0,
     hideCount: true,  //是否隐藏购物车上的数字
     count: 0,   //购物车上的计数
     needAni: true,  //抛物线动画是否在进行中
     hide_good_box: true   //是否隐藏物品小图标
   },
   props: {
-    // columnValue: 0
+    contentHeightvh: 0,
+    contentlist: [],
   },
   didMount() {
     this.getCartPos()
-    // this.setData({
-    //   'recommendlist.columnNum':this.props.columnValue 
-    // })
-
   },
-  didUpdate(prevProps, prevData) { },
-  didUnmount() { },
+  didUpdate() {
+    this.setData({
+      datalist: this.props.contentlist,
+      heightValue: this.props.contentHeightvh,
+    })
+  },
+  didUnmount() {
 
+   },
+  onLoad() {
+    this.getCartPos();
+  },
   methods: {
     handleItemTap() {
       dd.navigateTo({
@@ -270,4 +224,3 @@ Component({
     },
   },
 });
-

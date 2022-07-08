@@ -23,14 +23,14 @@
     flex-direction: column;
 }
 
-.grid-icon {
-    width: 30%;
-    height: 30%;
-}
+/* .grid-icon {
+    width: 80%;
+    height: 80%;
+} */
 
 .grid-text {
     color: #000;
-    font-size: 18rpx;
+    font-size: 28rpx;
     line-height: 1;
     margin-top: 8rpx;
 }

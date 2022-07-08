@@ -1,4 +1,4 @@
-@import '../../components/grid/grid.acss';
+@import '../../templates/grid/grid.acss';
 .page-swiper{
   text-align: center;
 }

@@ -1,11 +1,16 @@
+
+
+
 .classification{
   display: grid;
   grid-template-columns: 20% auto;
+  height: 200px;
 }
 .classification-nav{
   font-size: small;
   text-align: center;
-  height: 100vh;
+  /* 获得底部栏高度 */
+
 }
 .classification-nav,.classification-nav-item{
   background-color: cornflowerblue;
@@ -27,6 +32,9 @@
   width: 100%;
   border-left:5rpx solid black;
 }
+/* .classification-content{
+  height: 200px;
+} */
 .classification-content-header{
   background-color:cadetblue;
   z-index: 99999 !important;
@@ -78,20 +86,4 @@
   width: 40rpx;
   height: 40rpx;
 }
-.good_box {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  border-radius: 50%;
-  overflow: hidden;
-  left: 50%;
-  top: 50%;
-  z-index: +99;
-  border: 1px solid rgba(0, 116, 255, 0.61);
-  background: rgba(120, 188, 255, 0.2);
-}
-.good_box image {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+

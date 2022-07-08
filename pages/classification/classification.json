@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "appbar":"../../components/appbar/appbar",
-    "recommendlist_one":"../../components/recommendlist_one/recommendlist_one"
+    "list_classification":"../../components/list_classification/list_classification"
   },
     "defaultTitle": "分类"
 }

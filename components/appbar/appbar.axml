@@ -15,4 +15,4 @@
   </block>
 </view>
 <!-- 设置一个空间，使之不重叠 -->
-<view style="height:{{appbarHeight}}px">{{appbarHeight}}</view>
+<view style="height:{{appbarHeight}}px"></view>

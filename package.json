@@ -1,1 +1,5 @@
-{}
+{
+  "dependencies": {
+    "mini-stores": "^1.0.5"
+  }
+}

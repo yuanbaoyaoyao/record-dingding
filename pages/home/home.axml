@@ -1,48 +1,49 @@
-<import src="../../components/grid/grid.axml" />
+<import src="../../templates/grid/grid.axml" />
 
 <view class="page">
   <appbar/>
   <view class="page-swiper">
     <swiper indicator-dots="{{true}}" autoplay="{{true}}">
-      <swiper-item a:for="{{background}}">
+      <swiper-item a:for="{{listRotationsData}}">
         <view onTap="handletodetail">
-          <image mode="scaleToFill" src="{{item}}" lazy-load="{{true}}"></image>
+          <image mode="scaleToFill" src="{{item.avatar}}" lazy-load="{{true}}"></image>
         </view>
       </swiper-item>
     </swiper>
   </view>
-  <!-- 直接分两组即可 -->
   <!-- 可以尝试使用Ding Design的标签页功能：https://standard.dingtalk.com/?spm=ding_open_doc.document.0.0.3c7d4bd7I8qc7s#/cate/64/page/239  把汉字去掉即可-->
   <!-- 或者使用progress -->
   <view class="page-classification page-section">
     <swiper indicator-dots="{{true}}">
-      <block a:for="{{['#4A90E2','#F5A623']}}">
+      <block a:for="{{productsData}}">
         <swiper-item >
           <!--<view style="background-color: {{item}};width:100%;height:300rpx"/> -->
-          <template is="Grid" data="{{...grid}}"></template>
+          <template is="Grid" data="{{...item}}"></template>
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class="page-new-old page-section">
     <view class="page-old" onTap="handletoold">
-      这是旧耗材
+      旧耗材
       <view class="page-old-description">
-        这是描述
+        可能有宝藏哦ヽ(✿ﾟ▽ﾟ)ノ
       </view>
       <view class="page-old-pics">
-        <image mode="scaleToFill" src="/image/mock/88a1.png" lazy-load="{{true}}"></image>
-        <image mode="scaleToFill" src="/image/mock/88a1.png" lazy-load="{{true}}"></image>
+        <block a:for="{{oldData}}" a:if="{{index<2}}" a:key="{{index}}">
+          <image mode="scaleToFill" src={{item.avatar}} lazy-load="{{true}}"></image>
+        </block>
       </view>
     </view>
     <view class="page-new" onTap="handletonew">
-      这是新耗材
+      新耗材
       <view class="page-new-description">
-        这是描述
+        我要的终于来了o(￣▽￣)ｄ
       </view>
       <view class="page-new-pics">
-        <image mode="scaleToFill" src="/image/mock/88a1.png" lazy-load="{{true}}"></image>
-        <image mode="scaleToFill" src="/image/mock/88a1.png" lazy-load="{{true}}"></image>
+        <block a:for="{{newData}}" a:if="{{index<2}}">
+          <image mode="scaleToFill" src={{item.avatar}} lazy-load="{{true}}"></image>
+        </block>
       </view>
     </view>
   </view>
@@ -51,7 +52,7 @@
     <block a:for="{{listbutton}}">
       <view onTap="handlelistbuttontap" class="page-list-button-detail" data-index={{index}}>
         <label class="{{item.class}}">{{item.label1}}</label>
-        <label class="{{item.class}}">{{item.label2}}</label>
+        <image class="{{item.class}}" mode="scaleToFill" src={{item.avatar}} lazy-load="{{true}}" style="width:60rpx;height:60rpx;"></image>
       </view>
     </block>
   </view>
@@ -63,6 +64,7 @@
     <!--</block> -->
     <!-- 父传子或者子直接获取 -->
     <!--<recommendlist recommendlist="{{...recommendlist}}"></recommendlist> -->
-    <recommendlist columnValue=1 />
+    <listtype data="{{gridListByType}}" />
+    <!--<template is="ListType" data="{{...gridListByType}}"></template> -->
   </view>
 </view>

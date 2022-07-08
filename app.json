@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/classification/classification",
     "pages/home/home",
     "pages/consumables_detail/consumables_detail",
     "pages/setting/setting_details/address_management/address_management",
@@ -8,7 +9,6 @@
     "pages/mine/mine",
     "pages/cart/cart",
     "pages/search/search",
-    "pages/classification/classification",
     "pages/old_consumables/old_consumables",
     "pages/new_consumables/new_consumables",
     "pages/message/message",

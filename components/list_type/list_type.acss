@@ -1,0 +1,61 @@
+.list-type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+
+.list-type-item {
+    text-align: center;
+    position: relative;
+    /* background-color: white; */
+    position: relative;
+}
+
+.list-type-item-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    background-color: white;
+}
+
+.list-type-pic {
+    width: 100%;
+    height: 100%;
+}
+
+.list-type-text {
+    color: #000;
+    font-size: 18rpx;
+    line-height: 1;
+    margin-top: 8rpx;
+}
+.list-type-item-addinfo{
+    margin-top: 8rpx;
+    display: grid;
+    grid-template-columns: 80% auto;
+    justify-items:start;
+    width: 100%;
+}
+.list-type-item-addicon{
+    width: 30rpx;
+    height: 30rpx;
+}
+.good_box {
+  width: 10rpx;
+  height: 10rpx;
+  position: fixed;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  z-index: +99;
+  border: 1px solid orangered;
+  background: orangered;
+}

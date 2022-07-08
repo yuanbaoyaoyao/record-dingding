@@ -4,56 +4,8 @@ Component({
 
   mixins: [{ didMount() { } }],
   data: {
-    recommendlist: {
+    gridListByType: {
       list: [
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "1"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "2"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "3"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "4"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "5"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "6"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "7"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "8"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "9"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "10"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "11"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "12"
-        }
       ],
       columnNum: 2
     },
@@ -64,16 +16,17 @@ Component({
     hide_good_box: true   //是否隐藏物品小图标
   },
   props: {
-    // columnValue: 0
+    data: []
   },
   didMount() {
     this.getCartPos()
-    // this.setData({
-    //   'recommendlist.columnNum':this.props.columnValue 
-    // })
-
   },
-  didUpdate(prevProps, prevData) { },
+  didUpdate(prevProps, prevData) {
+    console.log("this.props.data", this.props.data);
+    this.setData({
+      gridListByType: this.props.data
+    })
+  },
   didUnmount() { },
 
   methods: {
