@@ -14,7 +14,7 @@ export function createUserAddressAPI(params) {
   return http.post(`${resquest}` + `create`, params)
 }
 export function deleteUserAddressAPI(params) {
-  return http.delete(`${resquest}` + `delete`, params)
+  return http.delete(`${resquest}` + `deleteDD`, params)
 }
 export function updateUserAddressAPI(params) {
   return http.put(`${resquest}` + `update`, params)

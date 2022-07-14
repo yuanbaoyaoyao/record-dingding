@@ -1,0 +1,31 @@
+<view class="message-edit-button">
+  <button type="default" size="mini" plain onTap="handleClear">
+    <image mode="scaleToFill" src="/image/broom.svg"style="width:50rpx;height:50rpx" />
+  </button>
+</view>
+<view>
+  <scroll-view scroll-y={{true}}>
+    <!-- 直接修改recommendlist -->
+    <block a:for="{{reminderList}}">
+      <view class="message-content" a:if="{{item.userFeedbackId!=null}}">
+        <view class="message-content-icon">
+          <image mode="scaleToFill" src="/image/feedback_detail.svg" style="width:40rpx;height:40rpx">
+          </image>
+          <view class="reminder" a:if={{item.isRead==false}}>
+          </view>
+        </view>
+        <view class="message-content-detail" onTap="handleToFeedback" onLongTap="handleDelete" data-index={{item.id}}>
+          <view class="message-content-top">
+            <text>反馈提醒</text>
+            <text>{{item.createdAt}}</text>
+          </view>
+          <view class="message-content-bottom ">
+          用户反馈：{{item.feedbackTitle}}有新的提醒
+          </view>
+        </view>
+      </view>
+      <!--<view class="message-content" a:if="{{item.orderProductId!=null}}"><view class="message-content-icon"><image mode="scaleToFill" src="/image/order_detail.svg" style="width:40rpx;height:40rpx"></image><view class="reminder" a:if="{{item.isRead==false}}"></view></view><view class="message-content-detail" onTap="handleToOrders" onLongTap="handleDelete" data-index={{item.id}}><view class="message-content-top"><text>订单提醒</text><text>{{item.createdAt}}</tex/t></view><view class="message-content-bottom ">
+          订单号：{{item.orderSn}}有新的提醒</view></view></view> -->
+    </block>
+  </scroll-view>
+</view>

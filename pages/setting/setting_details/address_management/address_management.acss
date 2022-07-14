@@ -14,6 +14,11 @@
 .address-management-item-info-detail{
   font-size: 25rpx;
 }
+.address-management-item-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .address-management-item-right{
   padding: 40rpx;
   padding-left: 60rpx;
@@ -24,7 +29,7 @@
   bottom: 0;
   display: flex;
   justify-content: center;
-  background-color: blueviolet;
+  background-color: #51C83D;
   width: 95%;
   margin-bottom: 10rpx;
   padding:20rpx;

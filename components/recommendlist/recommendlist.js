@@ -1,3 +1,6 @@
+import { listProductSkusSearchIPageAPI } from "../../common/api/product-skus";
+import { createCartAPI } from "../../common/api/cart"
+
 //区分左右边要变化公式
 Component({
 
@@ -5,59 +8,10 @@ Component({
   mixins: [{ didMount() { } }],
   data: {
     recommendlist: {
-      list: [
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "1"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "2"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "3"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "4"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "5"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "6"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "7"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "8"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "9"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "10"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "11"
-        },
-        {
-          "pic": "/image/mock/88a1.png",
-          "text": "12"
-        }
-      ],
+      list: [],
       columnNum: 2
     },
-    //
+    pageSize: 8,
     hideCount: true,  //是否隐藏购物车上的数字
     count: 0,   //购物车上的计数
     needAni: true,  //抛物线动画是否在进行中
@@ -66,8 +20,11 @@ Component({
   props: {
     // columnValue: 0
   },
+
   didMount() {
     this.getCartPos()
+    this.getRecommendList()
+
     // this.setData({
     //   'recommendlist.columnNum':this.props.columnValue 
     // })
@@ -82,6 +39,23 @@ Component({
         url: '/pages/consumables_detail/consumables_detail'
       })
     },
+
+    getRecommendList() {
+      let temp = {
+        pageSize: this.data.recommendlist.pageSize
+      }
+      listProductSkusSearchIPageAPI(temp).then((res) => {
+        let that = this;
+        let recommendlist = Object.assign({}, that.data.recommendlist);
+        recommendlist.list = res.data.data.records;
+        recommendlist.columnNum = res.data.data.total;
+        that.setData({
+          recommendlist
+        })
+      })
+    },
+
+
     /**
      * 设置动画开始及结束维护 needAni 参数
      * @method busAnimation
@@ -125,7 +99,22 @@ Component({
       }, 800);
     },
 
-    touchOnAdd: function (e) {
+    touchOnAdd(e) {
+      let index = e.currentTarget.dataset.index
+      let productSkusId = this.data.recommendlist.list[index].id
+      let temp = {
+        userId: 19,
+        productSkusId: productSkusId,
+        productSkusNumber: 1
+      }
+
+      createCartAPI(temp).then((res) => {
+        dd.showToast({
+          type: 'success',
+          content: '加入购物车成功',
+          duration: 1000
+        })
+      })
       // 如果good_box正在运动，则不处理
       if (!this.data.hide_good_box) return;
       //定义手指点击位置
@@ -167,6 +156,8 @@ Component({
       })
       //开始动画
       this.startAnimation(linePos);
+      this.props.onGetCartList();
+
     },
 
     startAnimation: function () {

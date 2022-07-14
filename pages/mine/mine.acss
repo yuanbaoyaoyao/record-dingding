@@ -1,42 +1,63 @@
-.mine{
+.mine {
   margin: 5rpx;
 }
-.mine-info{
+
+.mine-info {
   margin: 20rpx;
   display: grid;
   grid-template-columns: 20% 50% auto;
 }
-.mine-setting{
+
+.mine-setting {
   display: flex;
 }
-.mine-info-name,.mine-setting{
+
+.mine-info-name, .mine-setting {
   padding: 30rpx;
 }
-.mine-function{
+
+.mine-function {
   background-color: white;
   padding: 10rpx;
   border-radius: 10rpx;
   margin-bottom: 15rpx;
 }
-.mine-function-header{
+
+.mine-function-header {
   display: grid;
-  grid-template-columns: 60% auto;
+  grid-template-columns: 65% auto;
   border-bottom: wheat solid 1rpx;
+  padding: 10rpx;
 }
-.mine-function-header view{
+
+.mine-function-header>text {
+  font-size: large
+}
+
+.mine-function-header view {
   display: flex;
 }
-.mine-function-content{
-  display: flex;
+
+.mine-function-content {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
   justify-content: space-between;
   margin: 10rpx;
 }
-.recommendlist-title{
+
+.mine-function-content-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.recommendlist-title {
   display: flex;
   justify-content: center;
   margin-top: 40rpx;
 }
-.recommendlist-title image{
+
+.recommendlist-title image {
   margin-left: 20rpx;
   margin-right: 20rpx;
 }

@@ -20,15 +20,21 @@
 }
 .cart-content-detail-info-bottom-button{
   display: flex;
-  border-radius: 100rpx;
-  border:5rpx solid black;
+  /* border-radius: 100rpx;
+  border:5rpx solid black; */
 }
-.cart-content-detail-info-bottom-button view{
-    border-left:5rpx solid black;
-    border-right: 5rpx solid black;
-    padding-left: 5rpx;
-    padding-right: 5rpx;
+.cart-content-detail-info-bottom-number{
+    /* border-left:5rpx solid black;
+    border-right: 5rpx solid black; */
+    padding-left: 8rpx;
+    padding-right: 8rpx;
     text-align: center;
+}
+.cart-empty{
+  background-color: white;
+  text-align: center;
+  padding: 30rpx;
+  border-radius: 10rpx;
 }
 .recommendlist-title{
   display: flex;
@@ -51,6 +57,7 @@
 }
 .cart-bottom-right{
   display: flex;
+  justify-content: space-between;
 }
 .cart-bottom-left,.cart-count-info{
   padding: 15rpx;
@@ -58,12 +65,25 @@
 .cart-bottom-left image{
   margin-right: 10rpx;
 }
-.cart-confirm-button{
+/* .cart-confirm-button{
   padding: 15rpx;
   background-color: white;
   border-radius: 100rpx;
   margin-left: 30rpx;
+} */
+.cart-confirm>button{
+  margin-right: 40rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  width: 150rpx;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10rpx;
 }
-.cart-header-button{
-  margin:10rpx;
+.cart-header button{
+  margin-left: 5px;
+   font-size: 10px;
+   padding: 0;
+   border-radius: 10rpx;
 }

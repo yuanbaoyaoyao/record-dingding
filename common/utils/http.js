@@ -1,5 +1,5 @@
 
-let usertoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTcyNjk2NTAsInVzZXJuYW1lIjoiMSJ9.e9dArlcM16sA6Ng9h4YmtMvn4OUg_0hZ9yW5wNdqgxw";
+let usertoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTc4NTM2ODksInVzZXJuYW1lIjoiMSJ9.1RhtWA3g2n2gHE6OAqrOyLQuuq0xEPv02BSav9kO1OU"
 const http = {
   get(url, data) {
     dd.showLoading();
@@ -34,7 +34,8 @@ const http = {
       dd.httpRequest({
         headers: {
           "Content-Type": 'application/json;charset=utf-8',
-          Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          // Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          Authorization: 'Bearer ' + usertoken
         },
         url: url,
         method: 'POST',
@@ -59,7 +60,9 @@ const http = {
       dd.httpRequest({
         headers: {
           "Content-Type": 'application/json;charset=utf-8',
-          Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          // Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          Authorization: 'Bearer ' + usertoken
+
         },
         url: url,
         method: 'PUT',
@@ -80,15 +83,19 @@ const http = {
   },
   delete(url, data) {
     dd.showLoading();
+    console.log("delete data:", data)
     return new Promise((resolve, reject) => {
       dd.httpRequest({
         headers: {
           "Content-Type": 'application/json;charset=utf-8',
-          Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          // Authorization: 'Bearer ' + dd.getStorage({ key: 'usertoken' })
+          Authorization: 'Bearer ' + usertoken
         },
         url: url,
-        method: 'DELETE',
+        //似乎不支持delete
+        method: 'POST',
         data: JSON.stringify(data),
+        // data:data,
         dataType: 'json',
         success: (res) => {
           resolve(res)

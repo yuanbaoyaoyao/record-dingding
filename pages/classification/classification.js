@@ -84,7 +84,6 @@ Page({
   },
 
   getProductSkusList(e) {
-    console.log("eeeeeeeeeeeeeeeeee:", e)
     var that = this;
 
     listCountByProductIdAndTypeIPageAPI(e).then((res) => {

@@ -1,22 +1,25 @@
 <view class="setting">
   <view class="setting-button" onTap="handleToUserInfo">
-    <image mode="scaleToFill" src="../../image/checked.svg" style="height:40rpx;width:40rpx" />
+    <image mode="scaleToFill" src="../../image/mine.svg" style="height:40rpx;width:40rpx" />
     <text>个人信息</text>
     <image class="setting-button-next" mode="scaleToFill" src="../../image/next.svg" style="height:40rpx;width:40rpx" />
   </view>
   <view class="setting-button" onTap="handleToAddressManagement">
-    <image mode="scaleToFill" src="../../image/checked.svg" style="height:40rpx;width:40rpx" />
+    <image mode="scaleToFill" src="../../image/location.svg" style="height:36rpx;width:36rpx" />
     <text>收货地址管理</text>
     <image class="setting-button-next" mode="scaleToFill" src="../../image/next.svg" style="height:40rpx;width:40rpx" />
   </view>
   <view class="setting-button" onTap="handleToPasswordManagement">
-    <image mode="scaleToFill" src="../../image/checked.svg" style="height:40rpx;width:40rpx" />
+    <image mode="scaleToFill" src="../../image/password.svg" style="height:36rpx;width:36rpx" />
     <text>密码修改</text>
     <image class="setting-button-next" mode="scaleToFill" src="../../image/next.svg" style="height:40rpx;width:40rpx" />
   </view>
   <view class="setting-button" onTap="handleToAboutMe">
-    <image mode="scaleToFill" src="../../image/checked.svg" style="height:40rpx;width:40rpx" />
+    <image mode="scaleToFill" src="../../image/about.svg" style="height:40rpx;width:40rpx" />
     <text>关于我们</text>
     <image class="setting-button-next" mode="scaleToFill" src="../../image/next.svg" style="height:40rpx;width:40rpx" />
   </view>
+  <button type="warn" size="mini" onTap="handleLogOut">
+  退出登录
+  </button>
 </view>

@@ -1,0 +1,77 @@
+.message-function {
+  width: 90%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  margin: auto;
+  background-color: skyblue;
+  border-radius: 10rpx;
+  position: relative;
+  /* top: 60rpx;
+  left: 40rpx; */
+  margin-top: -160rpx;
+}
+
+.message-header-background {
+  margin-bottom: 20rpx;
+}
+
+.message-function-button {
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-function-button text {
+  padding-top: 8rpx
+}
+
+.message-content {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  padding: 10rpx;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.message-content-icon {
+  position: relative;
+}
+
+.reminder {
+  display: block;
+  background: #f00;
+  position: absolute;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  right: 25rpx;
+  top: 0rpx;
+}
+
+.message-content image {
+  padding-left: 5rpx;
+}
+
+.message-content-top {
+  display: flex;
+  justify-content: space-between
+}
+
+.message-content-bottom {
+  border-bottom: 1rpx solid black;
+  padding-bottom: 10 rpx;
+}
+
+.message-edit-button{
+  width: 100%;
+  margin-top: 20rpx;
+  text-align: end;
+}
+.message-edit-button button{
+  border-radius: 10rpx;
+  width: 60rpx;
+  padding: 0;
+  border: none;
+}

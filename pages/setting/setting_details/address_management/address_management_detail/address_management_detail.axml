@@ -1,0 +1,47 @@
+<view>
+  <form onSubmit="onSubmit">
+    <view class="detail-input">
+      <image mode="scaleToFill" src="/image/mine_active.svg" style="width:40rpx;height:40rpx"/>
+      <view class="detail-input-button">
+        <input placeholder="请输入领用人" name="receiver" value="{{addressInfo.receiver}}"/>
+        <image mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+      </view>
+    </view>
+    <view class="detail-input">
+      <image mode="scaleToFill" src="/image/phone.svg" style="width:40rpx;height:40rpx"/>
+      <view class="detail-input-button">
+        <input placeholder="请输入电话号码" name="phone"value="{{addressInfo.phone}}"/>
+        <image mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+      </view>
+    </view>
+    <view class="detail-input">
+      <image mode="scaleToFill" src="/image/user.svg" style="width:40rpx;height:40rpx"/>
+      <view class="detail-input-button">
+        <input placeholder="请输入使用人" name="user" value="{{addressInfo.user}}"/>
+        <image mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+      </view>
+    </view>
+    <view class="detail-input">
+      <image mode="scaleToFill" src="/image/address.svg" style="width:40rpx;height:40rpx"/>
+      <view class="detail-input-button">
+        <textarea placeholder="请输入详细地址" name="addressDetail" value="{{addressInfo.addressDetail}}"/>
+        <image mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+      </view>
+    </view>
+    <view class="detail-switch">
+      <text>默认地址</text>
+      <switch checked onChange="switch1Change" a:if="{{addressInfo.isDefault}}" name="isDefault"/>
+      <switch checked="{{false}}" a:else name="isDefault"/>
+    </view>
+    <view class="detail-bottom">
+      <button a:if="{{addressInfo!=''}}" type="warn" size="mini" onTap="handleDelete">
+    删除
+      </button>
+      <view a:else>
+      </view>
+      <button type="primary" size="mini" formType="submit">
+    提交
+      </button>
+    </view>
+  </form>
+</view>
