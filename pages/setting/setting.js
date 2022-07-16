@@ -18,7 +18,7 @@ Page({
   },
   handleToAboutMe() {
     dd.navigateTo({
-      url: '/pages/setting/setting_details/address_management/address_management'
+      url: '/pages/setting/setting_details/about_me/about_me'
     })
   },
   handleLogOut() {

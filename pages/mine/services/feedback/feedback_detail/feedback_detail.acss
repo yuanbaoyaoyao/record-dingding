@@ -1,0 +1,116 @@
+.password-input {
+  display: grid;
+  grid-template-columns: 10% 88%;
+  padding-top: 10rpx;
+}
+
+.password-input-button {
+  display: grid;
+  grid-template-columns: 100% -15%;
+  position: relative;
+}
+
+.password-input-image {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.password-input-button image {
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+}
+
+textarea, input {
+  padding-right: 80rpx;
+}
+
+.password-switch {
+  display: grid;
+  grid-template-columns: 85% 10%;
+  padding-top: 20rpx;
+  padding-left: 10rpx;
+}
+
+.password-input image {
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+}
+
+.password-input button {
+  width: fit-content;
+  height: fit-content;
+}
+
+.password-input input, .password-input textarea {
+  border-radius: 10rpx;
+}
+
+.password-bottom {
+  /* display: grid;
+  grid-template-columns: 50% 50%; */
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.password-bottom button {
+  border-radius: 20rpx;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+}
+
+.feedback-chat-detail {
+  height: 400rpx;
+  background-color: blueviolet;
+  margin: 10rpx 10rpx 10rpx 75rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  overflow-y: scroll;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10rpx;
+}
+
+.cart-header button {
+  font-size: 10px;
+  padding: 0;
+  border-radius: 10rpx;
+}
+
+.feedback-chat-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10rpx;
+}
+
+.feedback-chat-button button {
+  width: 20%;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+  font-size: 35rpx;
+}
+
+.chat-user {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25rpx;
+}
+
+.chat-admin {
+  margin-bottom: 25rpx;
+}
+
+.chat-user text, .chat-admin text {
+  border: 1rpx solid black;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}

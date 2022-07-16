@@ -16,7 +16,7 @@
   </view>
   <view class="setting-button" onTap="handleToAboutMe">
     <image mode="scaleToFill" src="../../image/about.svg" style="height:40rpx;width:40rpx" />
-    <text>关于我们</text>
+    <text>关于我</text>
     <image class="setting-button-next" mode="scaleToFill" src="../../image/next.svg" style="height:40rpx;width:40rpx" />
   </view>
   <button type="warn" size="mini" onTap="handleLogOut">

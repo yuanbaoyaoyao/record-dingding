@@ -16,3 +16,6 @@ export function createUserCollectAPI(params) {
 export function deleteUserCollectAPI(params) {
   return http.delete(`${resquest}` + `delete`, params)
 }
+export function deleteUserCollectListAPI(params) {
+  return http.delete(`${resquest}` + `deleteListDD`, params)
+}

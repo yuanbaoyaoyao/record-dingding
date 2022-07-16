@@ -1,11 +1,4 @@
 <view class="about-me">
-  <view class="about-me-button">
-    <text>头像</text>
-    <view class="about-me-button-right">
-      <view class="about-me-button-avatar">
-        <image mode="scaleToFill" src="/image/musiclogo.svg" style="height:80rpx;width:80rpx" />
-      </view>
-      <image mode="scaleToFill" src="/image/next.svg" style="height:60rpx;width:60rpx" />
-    </view>
-  </view>
+  <image mode="scaleToFill" src="/image/cat.png" style="height:200rpx;width:200rpx;border-radius:50%" />
+  <text>此项目为元宝尧尧制作</text>
 </view>

@@ -7,7 +7,7 @@
     <button onTap="handleCartEdit" size="mini" type="default">编辑</button>
   </view>
   <view class="cart-header" a:else>
-    <button onTap="handleCartEdit" size="mini" type="default">编辑</button>
+    <button onTap="handleCartEdit" size="mini" type="default">完成</button>
   </view>
 </view>
 <!-- 添加一个header，加上编辑按钮 -->

@@ -4,10 +4,20 @@ Page({
   data: {
     addressInfo: '',
     isEdit: false,
+    receiver: '',
+    phone: '',
+    user: '',
+    addressDetail: '',
+    isDefault: false,
   },
   onLoad(query) {
     let that = this;
     let addressInfo = that.data.addressInfo;
+    let receiver = that.data.receiver;
+    let phone = that.data.phone;
+    let user = that.data.user;
+    let addressDetail = that.data.addressDetail;
+    let isDefault = that.data.isDefault;
     let isEdit = that.data.isEdit;
     if (Object.keys(query) != 0) {
       isEdit = true;
@@ -15,6 +25,11 @@ Page({
       console.log("addressInfo:", addressInfo)
       that.setData({
         addressInfo,
+        receiver,
+        phone,
+        user,
+        addressDetail,
+        isDefault,
         isEdit
       })
     }
@@ -76,5 +91,46 @@ Page({
         }
       },
     });
-  }
+  },
+  bindInputReceiver(e) {
+    this.setData({
+      receiver: e.detail.value
+    })
+  },
+  bindInputPhone(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  bindInputUser(e) {
+    this.setData({
+      user: e.detail.value
+    })
+  },
+  bindInputAddressDetail(e) {
+    this.setData({
+      addressDetail: e.detail.value
+    })
+  },
+  handleClear(e) {
+    let name = e.currentTarget.dataset.name;
+    let that = this
+    if (name == "receiver") {
+      that.setData({
+        receiver:''
+      })
+    } else if (name == "phone") {
+      that.setData({
+        phone: ''
+      })
+    } else if (name == "user") {
+      that.setData({
+        user: ''
+      })
+    } else if (name == "addressDetail") {
+      that.setData({
+        addressDetail: ''
+      })
+    }
+  },
 });

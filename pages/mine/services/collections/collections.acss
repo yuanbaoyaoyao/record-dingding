@@ -1,0 +1,117 @@
+.cart-content-detail {
+  display: grid;
+  grid-template-columns: 10% 30% auto;
+  align-items: center;
+  justify-items: center;
+  background-color: cornflowerblue;
+  margin: 5rpx 15rpx 0 15rpx
+}
+
+.cart-content-detail-Editing {
+  display: grid;
+  grid-template-columns: 30% auto;
+  align-items: center;
+  justify-items: center;
+  background-color: cornflowerblue;
+  margin: 5rpx 15rpx 0 15rpx
+}
+
+.cart-content-detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.cart-content-detail-info-bottom {
+  display: grid;
+  grid-template-columns: 90% auto;
+  width: 100%;
+  background-color: chocolate;
+}
+
+.cart-content-detail-info-bottom-button {
+  display: flex;
+  /* border-radius: 100rpx;
+  border:5rpx solid black; */
+}
+
+.cart-content-detail-info-bottom-number {
+  /* border-left:5rpx solid black;
+    border-right: 5rpx solid black; */
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  text-align: center;
+}
+
+.cart-empty {
+  background-color: white;
+  text-align: center;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+
+.recommendlist-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.recommendlist-title image {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.cart-bottom {
+  position: fixed;
+  background-color: yellowgreen;
+  z-index: 99999;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 75% auto;
+  padding: 10rpx;
+}
+.cart-bottom-left{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding-left: 20rpx;
+}
+
+.cart-bottom-right {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-bottom-right button{
+  border-radius: 10rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  vertical-align: middle;
+}
+
+.cart-header button {
+  margin-left: 5px;
+  font-size: 10px;
+  padding: 0;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}
+
+.float-cart {
+  position: fixed;
+  z-index: 999999 !important;
+  top: 900rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  left: 630rpx;
+  background-color: black;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.float-cart image {
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}

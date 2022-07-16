@@ -1,3 +1,22 @@
 <view>
-  New Page
+  <block a:for="{{feedbackList}}">
+    <view class="feedback-content" onTap="handleToFeedbackDetailWithParam" data-item={{item}}>
+      <image mode="scaleToFill" src="{{item.feedbackPicUrl}}" style="width:160rpx;height:160rpx"/>
+      <view class="feedback-content-right">
+        <view class="feedback-content-right-header">
+          <text>{{item.feedbackTitle}}</text>
+          <text>{{item.createdAt}}</text>
+        </view>
+        <view class="feedback-content-right-bottom">
+          <text>{{item.feedbackContent}}</text>
+          <text a:if="{{!item.isFinished}}">状态：进行中</text>
+          <text a:else>状态：已完成</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="feedback-add-button" onTap="handleToFeedbackDetail">
+    <image mode="scaleToFill" src="/image/add.svg" style="height:40rpx;width:40rpx" />
+    <text>新增反馈</text>
+  </view>
 </view>

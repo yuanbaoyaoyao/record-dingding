@@ -1,0 +1,68 @@
+<view>
+  <view class="cart-header" a:if={{!isFinished&&isEdit}}>
+    <button onTap="handleClose" size="mini" type="warn">结束</button>
+  </view>
+  <form onSubmit="onSubmit">
+    <view class="password-input">
+      <image mode="scaleToFill" src="/image/title.svg" style="width:40rpx;height:40rpx"/>
+      <view class="password-input-button">
+        <input placeholder="请输入反馈标题" name="feedbackTitle" onInput="bindInputFeedbackTitle" value="{{feedbackTitle}}"/>
+        <view onTap="handleClear" data-name="feedbackTitle" a:if="{{!isEdit}}">
+          <image a:if="{{feedbackTitle!=''}}" mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+        </view>
+      </view>
+    </view>
+    <view class="password-input-image">
+      <image mode="scaleToFill" src="/image/pic.svg" style="width:60rpx;height:60rpx"/>
+      <view a:if={{feedbackPicUrl==''}} onTap="handleUpdate">
+        <image mode="scaleToFill" src="/image/picture_add.svg" style="width:200rpx;height:200rpx"/>
+      </view>
+      <view a:else>
+        <image mode="scaleToFill" src="{{feedbackPicUrl}}"style="width:200rpx;height:200rpx;margin-left:15rpx;"/>
+      </view>
+    </view>
+    <view class="password-input">
+      <image mode="scaleToFill" src="/image/content.svg" style="width:40rpx;height:40rpx"/>
+      <view class="password-input-button">
+        <textarea placeholder="请输入反馈内容" name="feedbackContent" onInput="bindInputFeedbackContent" value="{{feedbackContent}}"/>
+        <view onTap="handleClear" data-name="feedbackContent" a:if="{{!isEdit}}">
+          <image a:if="{{feedbackContent!=''}}" mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+        </view>
+      </view>
+    </view>
+    <view a:if="{{isEdit}}">
+      <view class="feedback-chat-detail">
+        <view class="chat-admin">
+          <block a:for="{{chatContent}}">
+            <view class="chat-admin" a:if={{item.adminUserId!=null}}>
+                {{item.adminUserName}}:
+                <text> {{item.content}}</text>
+            </view>
+            <view class="chat-user" a:else>
+              <text>{{item.content}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="password-input" a:if="{{!isFinished}}">
+        <image mode="scaleToFill" src="/image/re_password.svg" style="width:40rpx;height:40rpx"/>
+        <view class="password-input-button">
+          <textarea placeholder="请输入反馈信息" name="feedbackSendMessage" onInput="bindInputFeedbackSendMessage" value="{{feedbackSendMessage}}"/>
+          <view onTap="handleClear" data-name="feedbackSendMessage">
+            <image a:if="{{feedbackSendMessage!=''}}" mode="scaleToFill" src="/image/clear.svg" style="width:30rpx;height:30rpx"/>
+          </view>
+        </view>
+      </view>
+      <view class="feedback-chat-button" a:if="{{!isFinished}}">
+        <button type="primary" onTap="handleSendMessage">
+        发送
+        </button>
+      </view>
+    </view>
+    <view class="password-bottom" a:if="{{!isFinished&&!isEdit}}">
+      <button type="primary" size="mini" formType="submit">
+    提交
+      </button>
+    </view>
+  </form>
+</view>
