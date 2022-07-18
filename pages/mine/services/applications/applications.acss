@@ -1,0 +1,57 @@
+.detail-input {
+  display: grid;
+  grid-template-columns: 10% 88%;
+  padding-top: 10rpx;
+}
+
+.detail-input-button {
+  display: grid;
+  grid-template-columns: 100% -15%;
+  position: relative;
+}
+
+.detail-input-button image {
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+}
+
+textarea, input {
+  padding-right: 80rpx;
+}
+
+.detail-switch {
+  display: grid;
+  grid-template-columns: 85% 10%;
+  padding-top: 20rpx;
+  padding-left: 10rpx;
+}
+
+.detail-input image {
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+}
+
+.detail-input button {
+  width: fit-content;
+  height: fit-content;
+}
+
+.detail-input input, .detail-input textarea {
+  border-radius: 10rpx;
+}
+
+.detail-bottom button{
+  border-radius: 10rpx;
+  width: 88.5%;
+  height: 60rpx;
+  line-height: 60rpx;
+  vertical-align: middle;
+  margin-top: 20rpx;
+  margin-left: 70rpx;
+}
+.password-input-image {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}

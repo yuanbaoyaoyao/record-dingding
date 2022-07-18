@@ -1,0 +1,42 @@
+<view>
+  <view class="detail-header">
+    <view class="detail-header-content">
+      <image mode="scaleToFill" src="/image/exclamatory_mark.svg" style="width:50rpx;height:50rpx;"/>
+      <text>已取消</text>
+    </view>
+  </view>
+  <view class="detail-title">
+    <text>订单物品</text>
+  </view>
+  <block a:for="{{orderProductList.content}}">
+    <view class="detail-products">
+      <image mode="scaleToFill" src="{{item.productPicUrl}}" style="width:150rpx;height:150rpx;"/>
+      <view class="detail-products-content">
+        <view class="detail-products-left">
+          <text>{{item.productTitle}}</text>
+          <text>{{item.productSkusTitle}}</text>
+        </view>
+        <view class="detail-products-right">
+          <text>共{{item.number}}个</text>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="detail-title">
+    <text>订单信息</text>
+  </view>
+  <view class="detail-info">
+    <view class="info-detail">
+      <text>收货地址:</text>
+      <text>{{addressDetail}}</text>
+    </view>
+    <view class="info-detail">
+      <text>订单号:</text>
+      <text>{{orderSn}}</text>
+    </view>
+    <view class="info-detail">
+      <text>下单时间:</text>
+      <text>{{createdAt}}</text>
+    </view>
+  </view>
+</view>

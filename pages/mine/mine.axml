@@ -20,15 +20,15 @@
       </view>
     </view>
     <view class="mine-function-content">
-      <view class="mine-function-content-icon">
+      <view class="mine-function-content-icon" onTap="handleToOrders" data-index="1">
         <image mode="scaleToFill" src="/image/file-checked.svg" style="width:60rpx;height:60rpx" />
         <text>审核中</text>
       </view>
-      <view class="mine-function-content-icon">
+      <view class="mine-function-content-icon" onTap="handleToOrders" data-index="2">
         <image mode="scaleToFill" src="/image/truck.svg" style="width:60rpx;height:60rpx" />
         <text>待收货</text>
       </view>
-      <view class="mine-function-content-icon">
+      <view class="mine-function-content-icon" onTap="handleToOrders" data-index="3">
         <image mode="scaleToFill" src="/image/chat.svg" style="width:60rpx;height:60rpx" />
         <text>待评价</text>
       </view>

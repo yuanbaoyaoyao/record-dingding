@@ -1,3 +1,39 @@
 <view>
-  这是订单页
+  <view class="orders-header">
+    <block a:for="{{listbutton}}">
+      <view onTap="handlelistbuttontap" class="page-list-button-detail" data-index={{index}}>
+        <text class="{{item.class}}">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <view>
+  </view>
+  <view class="orders-content">
+    <block a:for="{{orderList}}" a:for-index="index">
+      <view class="orders-content-detail" onTap="handleToOrderDetail" data-item="{{item}}">
+        <view class="orders-content-detail-header">
+          <text>{{item.createdAt}}</text>
+          <text a:if="{{item.orderStatus==1}}">审核中</text>
+          <text a:if="{{item.orderStatus==2}}">待收货</text>
+          <text a:if="{{item.orderStatus==3}}">待评价</text>
+        </view>
+        <view class="orders-content-detail-content">
+          <view class="content-left">
+            <block a:for="{{orderProductList[index].content}}" a:if="{{index<3}}">
+              <image mode="scaleToFill" src="{{item.productPicUrl}}" style="width:120rpx;height:120rpx;"/>
+            </block>
+          </view>
+          <view class="content-right">
+            <text>总共{{orderProductList[index].count}}个</text>
+            <image mode="scaleToFill" src="/image/next.svg" style="width:40rpx;height:40rpx;"/>
+          </view>
+        </view>
+        <view class="order-content-detail-bottom">
+          <button type="primary" size="mini" onTap="">
+          查看详情
+          </button>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>

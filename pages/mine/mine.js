@@ -52,9 +52,10 @@ Page({
       url: '/pages/mine/services/applications/applications'
     })
   },
-  handleToOrders() {
+  handleToOrders(e) {
+    let index = e.currentTarget.dataset.index
     dd.navigateTo({
-      url: '/pages/mine/orders/orders'
+      url: '/pages/mine/orders/orders?index=' + index
     })
   },
   handleToSettings() {

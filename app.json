@@ -1,8 +1,11 @@
 {
   "pages": [
+    "pages/mine/mine",
+    "pages/mine/orders/orders",
+    "pages/mine/orders/order_detail/order_detail",
+    "pages/mine/services/applications/applications",
     "pages/mine/services/feedback/feedback",
     "pages/mine/services/feedback/feedback_detail/feedback_detail",
-    "pages/mine/mine",
     "pages/mine/services/collections/collections",
     "pages/cart/cart",
     "pages/setting/setting",
@@ -21,9 +24,7 @@
     "pages/old_consumables/old_consumables",
     "pages/new_consumables/new_consumables",
     "pages/search/search_details/search_details",
-    "pages/message/announcement_message/announcement_message",
-    "pages/mine/orders/orders",
-    "pages/mine/services/applications/applications"
+    "pages/message/announcement_message/announcement_message"
   ],
   "window": {
     "defaultTitle": "耗材管理系统"
