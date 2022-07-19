@@ -1,11 +1,10 @@
 <import src="../../templates/grid/grid.axml" />
-
 <view class="page">
   <appbar/>
   <view class="page-swiper">
     <swiper indicator-dots="{{true}}" autoplay="{{true}}">
       <swiper-item a:for="{{listRotationsData}}">
-        <view onTap="handletodetail">
+        <view onTap="handletodetail" data-id={{item.productSkusId}}>
           <image mode="scaleToFill" src="{{item.avatar}}" lazy-load="{{true}}"></image>
         </view>
       </swiper-item>
@@ -47,7 +46,6 @@
       </view>
     </view>
   </view>
-  
   <view class="page-list-button">
     <block a:for="{{listbutton}}">
       <view onTap="handlelistbuttontap" class="page-list-button-detail" data-index={{index}}>
@@ -56,11 +54,10 @@
       </view>
     </block>
   </view>
-  
   <view class="page-list-consumables">
     <!--<block> -->
     <!-- 使用错误，详见小程序template与conponent区别 -->
-    <!--<template is="Recommendlist"  data="{{...recommendlist}}"></template> -->
+    <!--<template is="Recommendlist" data="{{...recommendlist}}"></template> -->
     <!--</block> -->
     <!-- 父传子或者子直接获取 -->
     <!--<recommendlist recommendlist="{{...recommendlist}}"></recommendlist> -->

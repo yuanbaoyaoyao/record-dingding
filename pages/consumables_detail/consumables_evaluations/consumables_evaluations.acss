@@ -1,0 +1,42 @@
+.evaluate-content-header{
+  display: flex;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+}
+.evaluate-content-header-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.evaluate-detail{
+  padding-left: 62rpx;
+}
+.detail-evaluate-content{
+  padding-left: 10rpx;
+  padding-top: 10rpx;
+}
+.detail-bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% auto ;
+  padding: 25rpx 20rpx 25rpx 20rpx;
+}
+.detail-bottom-left view{
+  margin-right: 30rpx;
+}
+.detail-bottom-left{
+  display: flex
+}
+.detail-bottom-right{
+  display: flex;
+  justify-content: space-around;
+}
+.detail-bottom-right-button{
+  padding: 10rpx;
+  background-color: burlywood;
+  border-radius: 30rpx;
+}

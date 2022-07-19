@@ -1,0 +1,38 @@
+<view>
+  <view class="detail-evaluate-content" a:if={{evaluations.length>0}}>
+    <block a:for="{{evaluations}}">
+      <view class="evaluate-content-header">
+        <image mode="scaleToFill" src="{{evaluations[0].avatar}}" style="width:60rpx;height:60rpx"/>
+        <view class="evaluate-content-header-info">
+          <text>{{evaluations[0].receiver}}</text>
+          <text>{{evaluations[0].createdAt}}</text>
+        </view>
+      </view>
+      <view class="evaluate-detail">
+        <text a:if={{evaluations[0].productSkusEvaluation.length<100}}>{{evaluations[0].productSkusEvaluation}}</text>
+        <text a:else>{{evaluations[0].productSkusEvaluation.substring(0,100)}}......</text>
+      </view>
+    </block>
+  </view>
+  <view class="detail-bottom">
+    <view class="detail-bottom-left">
+      <view a:if="{{!isLike}}" onTap="handleAddToCollections">
+        <image mode="scaleToFill" src="/image/star.svg" style="height:40rpx;width:40rpx" />
+      </view>
+      <view a:else onTap="handleRemoveFromCollections">
+        <image mode="scaleToFill" src="/image/star_filled.svg" style="height:40rpx;width:40rpx" />
+      </view>
+      <view onTap="handleToCart">
+        <image mode="scaleToFill" src="/image/cart.svg" style="height:40rpx;width:40rpx" />
+      </view>
+    </view>
+    <view class="detail-bottom-right">
+      <view class="detail-bottom-right-button" onTap="handleAddInToCart">
+        加入购物车
+      </view>
+      <view class="detail-bottom-right-button">
+        立即购买
+      </view>
+    </view>
+  </view>
+</view>

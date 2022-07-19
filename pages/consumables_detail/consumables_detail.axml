@@ -13,47 +13,58 @@
   <!-- 占位使用 -->
   <!--<view style="height:{{detailHeaderHeight}}px"></view> -->
   <view id="detail-image" class="detail-image" onAppear="handleChangeConsumablesClass" onDisappear="handleChangeEvaluationClass">
-    <image mode="scaleToFill" src="../../image/mock/88a1.png" />
+    <image mode="scaleToFill" src="{{productSkusPic}}" />
   </view>
   <view class="detail-content">
-    <text class="detail-content-header">这是标题</text>
-    <text class="detail-content-description">这是描述</text>
-    <text class="detail-content-info">这是剩余数量</text>
+    <text class="detail-content-header">{{productSkusTitle}}</text>
+    <text class="detail-content-description">{{productSkusDes}}</text>
+    <text class="detail-content-info">剩余{{productSkusNumber}}个</text>
   </view>
   <view class="detail-handle">
     <view class="detail-handle-num">
       <text>数量</text>
       <view class="detail-handle-num-button">
-        <view class="detail-handle-num-button-minus" onTap="handleMinusItem">
-          <image mode="scaleToFill" src="../../image/cartminusbutton.svg" style="width:40rpx;height:40rpx" />
+        <view class="detail-handle-num-button-minus" onTap="handleMinusCount">
+          <image mode="scaleToFill" src="../../image/minus.svg" style="width:40rpx;height:40rpx" />
         </view>
-        <text>5件</text>
-        <view class="detail-handle-num-button-add" onTap="handleAddItem">
-          <image mode="scaleToFill" src="../../image/cartaddbutton.svg" style="width:40rpx;height:40rpx" />
+        <text>{{count}}件</text>
+        <view class="detail-handle-num-button-add" onTap="handleAddCount">
+          <image mode="scaleToFill" src="../../image/add.svg" style="width:40rpx;height:40rpx" />
         </view>
       </view>
     </view>
     <view class="detail-handle-address">
       <text>地址</text>
       <view onTap="handleSelectAddress">
-        <text>选择地址</text>
+        <picker onChange="bindObjPickerChange" value="{{arrIndex}}" range="{{objectArray}}" range-key="name">
+          <text a:if="{{defaultAddress==''}}">选择地址</text>
+          <text a:else>{{defaultAddress}}</text>
+          </view>
+        </picker>
       </view>
     </view>
   </view>
-  <view class="detail-recommend">
-    <text>为你推荐</text>
-    <scroll-view scroll-x={{true}}>图片</scroll-view>
-  </view>
+  <!--<view class="detail-recommend"><text>为你推荐</text><scroll-view scroll-x={{true}}>图片</scroll-view></view> -->
   <scroll-view onScrollToUpper="handleChangeEvaluationClass" onScrollToLower="handleChangeInfoClass">
     <view id="detail-evaluate" class="detail-evaluate">
       <view class="detail-evaluate-header">
         <text>评价</text>
-        <view onTap="handleGetEvaluationDetail">
+        <view onTap="handelToEvaluationDetail">
           评价详情
         </view>
       </view>
-      <view class="detail-evaluate-content">
-        这是评价
+      <view class="detail-evaluate-content" a:if={{evaluations.length>0}}>
+        <view class="evaluate-content-header">
+          <image mode="scaleToFill" src="{{evaluations[0].avatar}}" style="width:60rpx;height:60rpx"/>
+          <view class="evaluate-content-header-info">
+            <text>{{evaluations[0].receiver}}</text>
+            <text>{{evaluations[0].createdAt}}</text>
+          </view>
+        </view>
+        <view class="evaluate-detail">
+          <text a:if={{evaluations[0].productSkusEvaluation.length<100}}>{{evaluations[0].productSkusEvaluation}}</text>
+          <text a:else>{{evaluations[0].productSkusEvaluation.substring(0,100)}}......</text>
+        </view>
       </view>
     </view>
   </scroll-view>
@@ -62,11 +73,18 @@
   </view>
   <view class="detail-bottom">
     <view class="detail-bottom-left">
-      <image mode="scaleToFill" src="/image/star.svg" style="height:40rpx;width:40rpx" />
-      <image mode="scaleToFill" src="/image/cart.svg" style="height:40rpx;width:40rpx" />
+      <view a:if="{{!isLike}}" onTap="handleAddToCollections">
+        <image mode="scaleToFill" src="/image/star.svg" style="height:40rpx;width:40rpx" />
+      </view>
+      <view a:else onTap="handleRemoveFromCollections">
+        <image mode="scaleToFill" src="/image/star_filled.svg" style="height:40rpx;width:40rpx" />
+      </view>
+      <view onTap="handleToCart">
+        <image mode="scaleToFill" src="/image/cart.svg" style="height:40rpx;width:40rpx" />
+      </view>
     </view>
     <view class="detail-bottom-right">
-      <view class="detail-bottom-right-button">
+      <view class="detail-bottom-right-button" onTap="handleAddInToCart">
         加入购物车
       </view>
       <view class="detail-bottom-right-button">

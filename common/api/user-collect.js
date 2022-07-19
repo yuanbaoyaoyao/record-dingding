@@ -14,7 +14,7 @@ export function createUserCollectAPI(params) {
   return http.post(`${resquest}` + `create`, params)
 }
 export function deleteUserCollectAPI(params) {
-  return http.delete(`${resquest}` + `delete`, params)
+  return http.delete(`${resquest}` + `deleteDD`, params)
 }
 export function deleteUserCollectListAPI(params) {
   return http.delete(`${resquest}` + `deleteListDD`, params)

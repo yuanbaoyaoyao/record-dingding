@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/consumables_detail/consumables_detail",
+    "pages/consumables_detail/consumables_evaluations/consumables_evaluations",
+    "pages/home/home",
     "pages/mine/mine",
     "pages/mine/orders/orders",
     "pages/mine/orders/order_detail/order_detail",
@@ -13,18 +16,17 @@
     "pages/setting/setting_details/address_management/address_management_detail/address_management_detail",
     "pages/setting/setting_details/password_management/password_management",
     "pages/setting/setting_details/address_management/address_management",
-    "pages/home/home",
     "pages/message/feedback_message/feedback_message",
     "pages/message/order_message/order_message",
     "pages/message/message",
     "pages/setting/setting_details/user_info/user_info",
     "pages/classification/classification",
-    "pages/consumables_detail/consumables_detail",
     "pages/search/search",
     "pages/old_consumables/old_consumables",
     "pages/new_consumables/new_consumables",
     "pages/search/search_details/search_details",
-    "pages/message/announcement_message/announcement_message"
+    "pages/message/announcement_message/announcement_message",
+    "pages/cart/order_confirm/order_confirm"
   ],
   "window": {
     "defaultTitle": "耗材管理系统"

@@ -1,3 +1,9 @@
+import { listProductSkusSearchIPageAPI } from '/common/api/product-skus';
+import { createUserCollectAPI, deleteUserCollectAPI, IsLikeUserCollectAPI } from '/common/api/user-collect';
+import { listUserAddressAPI } from '/common/api/user-address'
+import { listProductSkusEvaluationIPageAPI } from '/common/api/product-skus-evaluation'
+import { createCartAPI } from '/common/api/cart'
+
 Page({
   data: {
     detailHeaderHeight: 0,
@@ -15,14 +21,36 @@ Page({
         "class": "detail-header-button"
       },
     ],
+    objectArray: [],
+    arrIndex: 0,
     consumablesHeight: 0,
     evaluationHeight: 0,
     infoHeight: 0,
     lastindex: 0,
-    headerTransparent: 0
+    headerTransparent: 0,
+    id: 0,
+    productSkusPic: '',
+    productSkusTitle: '',
+    productSkusDes: '',
+    productSkusNumber: 0,
+    count: 1,
+    addressDetail: '',
+    isLike: false,
+    collectedId: 0,
+    defaultAddress: '',
+    evaluations: [],
   },
-  onLoad() {
+  onLoad(query) {
+    console.log("query:", query)
     let that = this
+    let id = that.data.id;
+    id = query.id;
+    that.setData({
+      id,
+    })
+    that.handleGetInfo();
+    that.handleGetAddress();
+    that.handleGetEvaluation();
     dd.createSelectorQuery()
       .select('#detail-header').boundingClientRect()
       .select('#detail-image').boundingClientRect()
@@ -36,6 +64,64 @@ Page({
         })
       })
   },
+  handleGetInfo() {
+    let that = this;
+    let id = that.data.id;
+    id = 1;
+    let productSkusPic = that.data.productSkusPic;
+    let productSkusTitle = that.data.productSkusTitle;
+    let productSkusDes = that.data.productSkusDes;
+    let productSkusNumber = that.data.productSkusNumber;
+    let temp = {
+      id
+    }
+    listProductSkusSearchIPageAPI(temp).then((res) => {
+      console.log("listProductSkusSearchIPageAPI:", res.data.data.records[0])
+      let info = res.data.data.records[0];
+      productSkusPic = info.avatar;
+      productSkusTitle = info.productName + ' ' + info.title;
+      productSkusDes = info.description;
+      productSkusNumber = info.stock;
+      that.setData({
+        id,
+        productSkusPic,
+        productSkusTitle,
+        productSkusDes,
+        productSkusNumber
+      })
+      that.handleIsLike();
+    })
+  },
+  handleGetAddress() {
+    let that = this;
+    let defaultAddress = that.data.defaultAddress;
+    let objectArray = that.data.objectArray;
+    let temp = {
+      userId: 19
+    }
+    listUserAddressAPI(temp).then((res) => {
+      let index = 0;
+      for (let data of res.data.data) {
+        let temp = {
+          id: index++,
+          name: data.addressDetail
+        }
+        objectArray.push(temp);
+        if (data.isDefault) {
+          defaultAddress = data.addressDetail;
+          if (defaultAddress.length > 10) {
+            defaultAddress = defaultAddress.substring(0, 10)
+          }
+        }
+      }
+      that.setData({
+        defaultAddress,
+        objectArray
+      })
+
+    })
+  },
+
   handleScrollToConsumables() {
     let that = this
     dd.pageScrollTo({
@@ -89,6 +175,153 @@ Page({
     let headerTransparentTemp = e.scrollTop / 100
     this.setData({
       headerTransparent: headerTransparentTemp
+    })
+  },
+  handleToCart() {
+    dd.navigateTo({
+      url: '/pages/cart/cart'
+    })
+  },
+  handleAddToCollections() {
+    let that = this;
+    let productSkusId = that.data.id;
+    let isLike = that.data.isLike;
+    let temp = {
+      userId: 19,
+      productSkusId: productSkusId
+    }
+    createUserCollectAPI(temp).then((res) => {
+      isLike = true;
+      that.setData({
+        isLike
+      })
+      dd.showToast({
+        type: 'success',
+        content: '添加收藏成功',
+        duration: 1000
+      })
+    })
+  },
+  handleRemoveFromCollections() {
+    let that = this;
+    let collectedId = that.data.collectedId;
+    let isLike = that.data.isLike;
+    let temp = {
+      id: collectedId
+    }
+    deleteUserCollectAPI(temp).then((res) => {
+      isLike = false;
+      that.setData({
+        isLike
+      })
+      dd.showToast({
+        type: 'success',
+        content: '删除收藏成功',
+        duration: 1000
+      })
+    })
+  },
+  handleIsLike() {
+    let that = this;
+    let isLike = that.data.isLike;
+    let productSkusId = that.data.id;
+    let collectedId = that.data.collectedId;
+    let temp = {
+      userId: 19,
+      productSkusId: productSkusId
+    }
+    IsLikeUserCollectAPI(temp).then((res) => {
+      if (typeof (res.data.data[0]) != "undefined") {
+        collectedId = res.data.data[0].id;
+        isLike = true;
+        that.setData({
+          isLike,
+          collectedId
+        })
+      }
+    })
+  },
+  handleAddCount() {
+    let that = this;
+    let count = that.data.count;
+    let productSkusNumber = that.data.productSkusNumber;
+    if (count < productSkusNumber) {
+      count++;
+      that.setData({
+        count
+      })
+    } else {
+      dd.showToast({
+        type: 'exception',
+        content: '超过库存数量',
+        duration: 1000
+      })
+    }
+  },
+  handleMinusCount() {
+    let that = this;
+    let count = that.data.count;
+    let productSkusNumber = that.data.productSkusNumber;
+    if (count > 1) {
+      count--;
+      that.setData({
+        count
+      })
+    } else {
+      dd.showToast({
+        type: 'exception',
+        content: '至少购买一件哦',
+        duration: 1000
+      })
+    }
+  },
+  bindObjPickerChange(e) {
+    let that = this;
+    let defaultAddress = that.data.defaultAddress;
+    defaultAddress = that.data.objectArray[e.detail.value].name
+    that.setData({
+      arrIndex: e.detail.value,
+      defaultAddress
+    });
+  },
+  handleGetEvaluation() {
+    let that = this;
+    let id = that.data.id;
+    let evaluations = that.data.evaluations;
+    let temp = {
+      productSkusId: id
+    }
+    listProductSkusEvaluationIPageAPI(temp).then((res) => {
+      console.log("ressssssssss:", res.data.data.records)
+      evaluations = res.data.data.records;
+      that.setData({
+        evaluations
+      })
+    })
+  },
+  handelToEvaluationDetail() {
+    let that = this;
+    let id = that.data.id;
+    dd.navigateTo({
+      url: '/pages/consumables_detail/consumables_evaluations/consumables_evaluations?id=' + id
+    })
+  },
+  handleAddInToCart() {
+    let that = this;
+    let id = that.data.id;
+    let count = that.data.count;
+    let temp = {
+      userId: 19,
+      productSkusId: id,
+      productSkusNumber: count,
+    }
+    createCartAPI(temp).then((res) => {
+      console.log("ressssssssss:", res.data)
+      dd.showToast({
+        type: 'success',
+        content: '加入购物车成功',
+        duration: 1000
+      })
     })
   }
 });

@@ -4,7 +4,7 @@ import { listProductSkusByTypeIPageAPI } from "../../common/api/product-skus";
 
 Page({
   data: {
-    type:1,
+    type: 1,
     listRotationsData: [],
     productsData: [],
     productSkusData: [],
@@ -49,7 +49,7 @@ Page({
     let index = e.currentTarget.dataset.index
     let changeclass = 'listbutton[' + index + '].class'
     let clearlastclass = 'listbutton[' + this.data.lastindex + '].class'
-    this.type = index+1;
+    this.type = index + 1;
     this.getListByType();
     if (changeclass != clearlastclass) {
       this.setData({
@@ -59,9 +59,10 @@ Page({
     }
     this.data.lastindex = index
   },
-  handletodetail() {
+  handletodetail(e) {
+    let id = e.currentTarget.dataset.id;
     dd.navigateTo({
-      url: '/pages/consumables_detail/consumables_detail'
+      url: '/pages/consumables_detail/consumables_detail?id=' + id
     })
   },
   handletoold() {
@@ -86,6 +87,7 @@ Page({
       this.setData({
         listRotationsData: res.data.data
       })
+      console.log("this.data.lisRotationsData:", this.data.listRotationsData)
     });
   },
   getClassification() {
@@ -134,7 +136,7 @@ Page({
   getListByType() {
     var that = this;
     var type = 1;
-    if(that.type!=undefined){
+    if (that.type != undefined) {
       type = that.type;
     }
     let tempForm = {
