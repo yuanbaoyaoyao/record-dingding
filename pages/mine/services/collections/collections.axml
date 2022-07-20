@@ -13,7 +13,9 @@
           <image a:if="{{item.checked}}" mode="scaleToFill" src="/image/checked.svg" style="width:40rpx;height:40rpx" />
           <image a:else mode="scaleToFill" src="/image/unchecked.svg" style="width:40rpx;height:40rpx" />
         </view>
-        <image mode="scaleToFill" src="{{item.avatar}}" style="width:200rpx;height:200rpx" />
+        <view onTap="handleItemTap" data-id={{item.productSkusId}}>
+          <image mode="scaleToFill" src="{{item.avatar}}" style="width:200rpx;height:200rpx" />
+        </view>
         <view class="cart-content-detail-info">
           <text>{{item.productName}} {{item.title}}</text>
           <view class="cart-content-detail-info-bottom">

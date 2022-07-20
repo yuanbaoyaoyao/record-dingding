@@ -4,7 +4,7 @@
     <!-- 贝塞尔曲线 -->
     <view style="width:{{100/(columnNum||2)}}%;padding-top:40%;" class="recommendlist-item">
       <view class="recommendlist-item-wrapper" >
-        <view onTap="handleItemTap"  >
+        <view onTap="handleItemTap"  data-id={{item.id}}>
           <image id="cart-icon" mode="aspectFit" src="{{item.avatar}}"  style="width:160rpx;height:160rpx"/>
         </view>
         <text class="recommendlist-text">{{item.productName}} {{item.title}}</text>

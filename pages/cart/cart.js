@@ -12,7 +12,7 @@ Page({
     isEdit: false,
   },
 
-  onLoad() {
+  onShow() {
     let that = this
     this.getCartList()
     dd.createSelectorQuery()
@@ -226,6 +226,25 @@ Page({
     } else {
 
     }
-  }
+  },
+  handleToConfirmOrder() {
+    let that = this;
+    let checkedlist = that.data.checkedlist;
+    console.log("checkedlist:",checkedlist)
+    let temp = {
+      consumables: [],
+      addressId: 0,
+      countList: []
+    }
+    for(var data of checkedlist){
+      temp.consumables.push(data);
+      temp.countList.push(data.productSkusNumber);
+    }
+    console.log("temp:", temp)
+    let item = encodeURIComponent(JSON.stringify(temp));
+    dd.navigateTo({
+      url: '/pages/cart/order_confirm/order_confirm?info=' + item
+    })
+  },
 
 });

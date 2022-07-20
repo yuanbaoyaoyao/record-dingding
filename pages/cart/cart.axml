@@ -64,7 +64,7 @@
     <view class="cart-count-info">
       <text>合计:{{countAll}}件</text>
     </view>
-    <view class="cart-confirm" onTap="handleCartConfirm" a:if="{{!isEdit}}">
+    <view class="cart-confirm" onTap="handleToConfirmOrder" a:if="{{!isEdit}}">
       <button size="default" type="primary">去结算</button>
     </view>
     <view class="cart-confirm" onTap="handleDelete" a:else>

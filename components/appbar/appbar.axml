@@ -4,7 +4,7 @@
       <input placeholder="请输入搜索内容"></input>
       <view class="appbar-input-button">
         <icon type="search" size="15"></icon>
-        <button size="mini" type="primary">搜索{{appbarHeight}}</button>
+        <button size="mini" type="primary">搜索</button>
       </view>
     </view>
     <view class="appbar-messageBox" onTap="handletomessage">

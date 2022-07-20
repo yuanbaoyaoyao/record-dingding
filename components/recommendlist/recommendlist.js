@@ -34,9 +34,10 @@ Component({
   didUnmount() { },
 
   methods: {
-    handleItemTap() {
+    handleItemTap(e) {
+      let id = e.currentTarget.dataset.id;
       dd.navigateTo({
-        url: '/pages/consumables_detail/consumables_detail'
+        url: '/pages/consumables_detail/consumables_detail?id=' + id
       })
     },
 
@@ -52,6 +53,7 @@ Component({
         that.setData({
           recommendlist
         })
+        console.log("recommendlist:",recommendlist)
       })
     },
 

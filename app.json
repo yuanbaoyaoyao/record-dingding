@@ -1,16 +1,20 @@
 {
   "pages": [
-    "pages/consumables_detail/consumables_detail",
-    "pages/consumables_detail/consumables_evaluations/consumables_evaluations",
     "pages/home/home",
+    "pages/search/search_details/search_details",
+    "pages/mine/services/collections/collections",
+    "pages/classification/classification",
+    "pages/search/search",
+    "pages/cart/cart",
+    "pages/consumables_detail/consumables_detail",
+    "pages/cart/order_confirm/order_confirm",
+    "pages/consumables_detail/consumables_evaluations/consumables_evaluations",
     "pages/mine/mine",
     "pages/mine/orders/orders",
     "pages/mine/orders/order_detail/order_detail",
     "pages/mine/services/applications/applications",
     "pages/mine/services/feedback/feedback",
     "pages/mine/services/feedback/feedback_detail/feedback_detail",
-    "pages/mine/services/collections/collections",
-    "pages/cart/cart",
     "pages/setting/setting",
     "pages/setting/setting_details/about_me/about_me",
     "pages/setting/setting_details/address_management/address_management_detail/address_management_detail",
@@ -20,13 +24,9 @@
     "pages/message/order_message/order_message",
     "pages/message/message",
     "pages/setting/setting_details/user_info/user_info",
-    "pages/classification/classification",
-    "pages/search/search",
     "pages/old_consumables/old_consumables",
     "pages/new_consumables/new_consumables",
-    "pages/search/search_details/search_details",
-    "pages/message/announcement_message/announcement_message",
-    "pages/cart/order_confirm/order_confirm"
+    "pages/message/announcement_message/announcement_message"
   ],
   "window": {
     "defaultTitle": "耗材管理系统"

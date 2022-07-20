@@ -1,0 +1,37 @@
+.search-content-detail {
+  display: flex;
+  border-bottom: 5rpx solid black;
+  padding: 10rpx;
+}
+
+.search-content-detail-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.search-content-detail-info-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: chocolate;
+}
+
+.float-cart {
+  position: fixed;
+  z-index: 999999 !important;
+  top: 900rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  left: 630rpx;
+  background-color: black;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.float-cart image {
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}

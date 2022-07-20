@@ -87,7 +87,7 @@
       <view class="detail-bottom-right-button" onTap="handleAddInToCart">
         加入购物车
       </view>
-      <view class="detail-bottom-right-button">
+      <view class="detail-bottom-right-button" onTap="handleToConfirmOrder">
         立即购买
       </view>
     </view>

@@ -25,8 +25,8 @@ export function updateCartCheckedDefaultAPI(params) {
   return http.put(`${resquest}` + `updateCheckedDefault`, params)
 }
 export function deleteCartAPI(params) {
-  return http.delete(`${resquest}` + `delete`, params)
+  return http.delete(`${resquest}` + `deleteDD`, params)
 }
 export function deleteCartListAPI(params) {
-  return http.delete(`${resquest}` + `deleteList`, params)
+  return http.delete(`${resquest}` + `deleteListDD`, params)
 }

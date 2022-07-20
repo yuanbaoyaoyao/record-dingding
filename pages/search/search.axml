@@ -1,9 +1,11 @@
 <view class="search">
+<view style="height:10rpx;">
+</view>
   <form onSubmit="handlesearch">
     <view class="search-input">
       <view class="search-input-content">
         <icon type="search" size="15" />
-        <input name="searchInput" id="search-input" placeholder="请输入搜索内容" />
+        <input name="searchInput" id="search-input" placeholder="请输入搜索内容" onInput="bindInputSearchContent" value="{{searchContent}}"/>
       </view>
       <!--<button size="mini" type="primary" onTap="handletosearchdetails">搜索</button> -->
       <button size="mini" type="primary" form-type="submit">搜索</button>
@@ -19,14 +21,14 @@
     <view class="search-history-content">
       <block a:for="{{historylist}}">
         <label class="search-history-content-detail">
-          <view onTap="handlelabeltap">
+          <view onTap="handlelabeltap" data-item={{item}}>
             {{item}}
           </view>
         </label>
       </block>
     </view>
   </view>
-  <view class="search-history">
+  <!-- <view class="search-history">
     <view class="search-history-header">
       <text>热门搜索</text>
     </view>
@@ -39,11 +41,10 @@
         </label>
       </block>
     </view>
-  </view>
-  <view class="search-always">
+  </view> -->
+  <!-- <view class="search-always">
     <text>常购清单</text>
     <scroll-view scroll-y={{true}}>
-      <!-- 直接修改recommendlist -->
       <block a:for="{{contentlist}}">
         <view class="cart-content-detail">
           <image mode="scaleToFill" src="{{item.pic}}" style="width:200rpx;height:200rpx" />
@@ -64,5 +65,5 @@
   </view>
   <view class="float-cart" onTap="handletocart">
     <image mode="scaleToFill" src="/image/cart.svg" style="width:80rpx;height:80rpx" />
-  </view>
+  </view> -->
 </view>

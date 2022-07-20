@@ -1,60 +1,61 @@
 Page({
   data: {
     historylist: [],
-    popularlist: [
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-      ['123'],
-    ],
-    contentlist: [
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-      {
-        "checkedpic": "/image/checked.svg",
-        "pic": "/image/mock/88a1.png",
-        "num": 2
-      },
-    ],
+    searchContent: ''
+    // popularlist: [
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    //   ['123'],
+    // ],
+    // contentlist: [
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    //   {
+    //     "checkedpic": "/image/checked.svg",
+    //     "pic": "/image/mock/88a1.png",
+    //     "num": 2
+    //   },
+    // ],
   },
   onLoad() {
     let that = this
@@ -68,12 +69,18 @@ Page({
     })
   },
   handlelabeltap(e) {
-    let searchItem = e.target.dataset.item[0]
+    let searchItem = e.target.dataset.item
     this.handletosearchdetails(searchItem)
   },
   handlesearch(e) {
     let searchItem = e.detail.value.searchInput
-    this.handletosearchdetails(searchItem)
+    if (searchItem.length == 0) {
+      dd.alert({
+        content: "请输入搜索内容"
+      });
+    } else {
+      this.handletosearchdetails(searchItem)
+    }
   },
   handletosearchdetails(searchItem) {
     let that = this
@@ -91,6 +98,10 @@ Page({
       that.data.historylist.splice(index, 1)
       that.handlesethistorydatastorage(temphistorylistitem, that.data.historylist)
     }
+    console.log("searchItem:", searchItem)
+    dd.navigateTo({
+      url: '/pages/search/search_details/search_details?searchItem=' + searchItem
+    })
   },
   handlesethistorydatastorage(tempitem, data) {
     this.data.historylist.unshift(tempitem)
@@ -118,9 +129,14 @@ Page({
       },
     })
   },
-  handletocart(){
-    dd.switchTab({
-      url:'/pages/cart/cart'
+  bindInputSearchContent(e) {
+    this.setData({
+      searchContent: e.detail.value
     })
-  }
+  },
+  // handletocart(){
+  //   dd.switchTab({
+  //     url:'/pages/cart/cart'
+  //   })
+  // }
 });

@@ -6,6 +6,7 @@ import { createCartAPI } from '/common/api/cart'
 
 Page({
   data: {
+    consumableInfo: '',
     detailHeaderHeight: 0,
     detailHeaderButtons: [
       {
@@ -41,10 +42,10 @@ Page({
     evaluations: [],
   },
   onLoad(query) {
-    console.log("query:", query)
     let that = this
     let id = that.data.id;
     id = query.id;
+    console.log("query.id:",id)
     that.setData({
       id,
     })
@@ -67,17 +68,17 @@ Page({
   handleGetInfo() {
     let that = this;
     let id = that.data.id;
-    id = 1;
     let productSkusPic = that.data.productSkusPic;
     let productSkusTitle = that.data.productSkusTitle;
     let productSkusDes = that.data.productSkusDes;
     let productSkusNumber = that.data.productSkusNumber;
+    let consumableInfo = that.data.consumableInfo;
     let temp = {
       id
     }
     listProductSkusSearchIPageAPI(temp).then((res) => {
-      console.log("listProductSkusSearchIPageAPI:", res.data.data.records[0])
       let info = res.data.data.records[0];
+      consumableInfo = info;
       productSkusPic = info.avatar;
       productSkusTitle = info.productName + ' ' + info.title;
       productSkusDes = info.description;
@@ -87,7 +88,8 @@ Page({
         productSkusPic,
         productSkusTitle,
         productSkusDes,
-        productSkusNumber
+        productSkusNumber,
+        consumableInfo
       })
       that.handleIsLike();
     })
@@ -103,7 +105,7 @@ Page({
       let index = 0;
       for (let data of res.data.data) {
         let temp = {
-          id: index++,
+          id: data.id,
           name: data.addressDetail
         }
         objectArray.push(temp);
@@ -118,7 +120,6 @@ Page({
         defaultAddress,
         objectArray
       })
-
     })
   },
 
@@ -261,7 +262,6 @@ Page({
   handleMinusCount() {
     let that = this;
     let count = that.data.count;
-    let productSkusNumber = that.data.productSkusNumber;
     if (count > 1) {
       count--;
       that.setData({
@@ -280,7 +280,7 @@ Page({
     let defaultAddress = that.data.defaultAddress;
     defaultAddress = that.data.objectArray[e.detail.value].name
     that.setData({
-      arrIndex: e.detail.value,
+      arrIndex: that.data.objectArray[e.detail.value].id,
       defaultAddress
     });
   },
@@ -292,7 +292,6 @@ Page({
       productSkusId: id
     }
     listProductSkusEvaluationIPageAPI(temp).then((res) => {
-      console.log("ressssssssss:", res.data.data.records)
       evaluations = res.data.data.records;
       that.setData({
         evaluations
@@ -316,12 +315,29 @@ Page({
       productSkusNumber: count,
     }
     createCartAPI(temp).then((res) => {
-      console.log("ressssssssss:", res.data)
       dd.showToast({
         type: 'success',
         content: '加入购物车成功',
         duration: 1000
       })
     })
-  }
+  },
+  handleToConfirmOrder() {
+    let that = this;
+    let arrIndex = that.data.arrIndex;
+    let consumableInfo = that.data.consumableInfo;
+    let count = that.data.count;
+    let temp = {
+      consumables: [],
+      addressId: arrIndex,
+      countList:[]
+    }
+    temp.consumables.push(consumableInfo);
+    temp.countList.push(count);
+    console.log("temp:",temp)
+    let item = encodeURIComponent(JSON.stringify(temp));
+    dd.navigateTo({
+      url: '/pages/cart/order_confirm/order_confirm?info=' + item
+    })
+  },
 });

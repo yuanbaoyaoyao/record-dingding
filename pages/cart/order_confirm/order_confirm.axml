@@ -1,3 +1,55 @@
 <view>
-  New Page
+  <picker onChange="bindObjPickerChange" value="{{arrIndex}}" range="{{objectArray}}" range-key="name">
+    <view class="confirm-address">
+      <view a:if="{{defaultAddress==''}}">
+        <text>选择地址</text>
+      </view>
+      <view a:else>
+        <view class="confirm-address-top">
+          <text a:if="{{isDefault}}" class="default-address">默认</text>
+          <text>{{defaultAddress}}</text>
+        </view>
+        <view class="confirm-address-bottom">
+          <text>{{receiver}}</text>
+          <text>{{phone}}</text>
+        </view>
+      </view>
+      <view class="confirm-address-icon">
+        <image mode="scaleToFill" src="/image/next.svg" style="width:50rpx;height:50rpx;"/>
+      </view>
+    </view>
+  </picker>
+  <block a:for="{{consumableInfo}}">
+    <view class="confirm-consumables">
+      <image mode="scaleToFill" src="{{item.avatar}}" style="width:120rpx;height:120rpx;"/>
+      <view class="consumables-info">
+        <view class="consumables-name">
+          <text>{{item.productName}}</text>
+          <text>{{item.title}}</text>
+        </view>
+        <text>共{{item.number}}个</text>
+      </view>
+    </view>
+  </block>
+  <view class="confirm-remarks">
+    <text>订单备注</text>
+    <view class="confirm-remarks-right">
+      <view a:if={{remarks==''&&!isInputRemark}} onTap="handleInputRemarks">
+        <text>无备注</text>
+      </view>
+      <input a:if={{isInputRemark}} name="remarks" onConfirm="handleFinishedRemarks" onInput="bindInputRemarks" value="{{remarks}}"/>
+      <view a:if={{remarks!=''&&!isInputRemark}} onTap="handleInputRemarks">
+        <text>{{remarks}}</text>
+      </view>
+      <image mode="scaleToFill" src="/image/next.svg" style="width:30rpx;height:30rpx;"/>
+    </view>
+  </view>
+  <view class="detail-bottom">
+    <text>合计:{{countAll}}个</text>
+    <view class="detail-bottom-right">
+      <view class="detail-bottom-right-button" onTap="handleCreateOrder">
+        确认订单
+      </view>
+    </view>
+  </view>
 </view>

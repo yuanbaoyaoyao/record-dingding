@@ -1,3 +1,25 @@
 <view>
-  这是搜索详情页
+  <scroll-view scroll-y={{true}}>
+    <!-- 直接修改recommendlist -->
+    <block a:for="{{consumables}}">
+      <view class="search-content-detail">
+        <view onTap="handleItemTap" data-id={{item.id}}>
+          <image mode="scaleToFill" src="{{item.avatar}}" style="width:160rpx;height:160rpx" />
+        </view>
+        <view class="search-content-detail-info">
+          <text>{{item.productName}} {{item.title}}</text>
+          <text>{{item.description}}</text>
+          <view class="search-content-detail-info-bottom">
+            <text>剩余{{item.stock}}个</text>
+            <view onTap="handleAddInToCart" data-id={{item.id}}>
+              <image mode="scaleToFill" src="/image/add.svg" style="width:40rpx;height:40rpx;"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="float-cart" onTap="handletocart" a:if="{{!isEdit}}">
+    <image mode="scaleToFill" src="/image/cart.svg" style="width:80rpx;height:80rpx" />
+  </view>
 </view>
